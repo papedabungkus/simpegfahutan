@@ -39,7 +39,7 @@
                     <div id="Person-1" class="box">
                         <div class="box-header">
                             <i class="icon-user icon-large"></i>
-                            <h5>Daftar Urut Kepangkatan Dosen Fahutan Unipa (Keadaan Januari 2019)</h5>
+                            <h5>DUK Dosen Fahutan Unipa (Keadaan Januari 2019)</h5>
                         </div>
                         <div class="box-content box-table">
                         <img src="<?php echo base_url('assets/dukdosen.png')?>" />
@@ -49,7 +49,7 @@
                     <div id="Person-2" class="box">
                         <div class="box-header">
                             <i class="icon-user icon-large"></i>
-                            <h5>Daftar Urut Kepangkatan Pegawai Fahutan Unipa (Keadaan Januari 2019)</h5>
+                            <h5>DUK Pegawai Fahutan Unipa (Keadaan Januari 2019)</h5>
                             
                         </div>
                         <div class="box-content box-table">
