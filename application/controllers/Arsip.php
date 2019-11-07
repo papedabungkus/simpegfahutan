@@ -49,6 +49,7 @@ class Arsip extends CI_Controller{
                 $nama = "";
                 $nip = "";
                 $iddospeg = "";
+                $q_foto = "";
             }
                 
         } else {
