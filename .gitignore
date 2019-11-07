@@ -3,7 +3,8 @@
 application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
-
+application/config/config.php
+application/config/database.php
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
