@@ -1,41 +1,56 @@
     <section class="page container">
         <div class="row">
-            <div class="span8">
+
+            <div class="span6">
+                <div class="box pattern pattern-sandstone">
+                    <div class="box-header">
+                        <i class="icon-list"></i>
+                        <h5>Pengumuman</h5>
+                    </div>
+                    <div class="box-content box-list collapse in">
+                        <ul>
+                            <?php 
+                            foreach ($pengumuman as $informasi) {
+                            ?>
+                            <li>
+                                <div>
+                                    <a class="news-item-title" style="text-decoration: none;"><?php echo tanggalwaktu($informasi['datetime']);?></a>
+                                    <p class="news-item-preview">
+                                        <?=$informasi['judul'];?></p>
+                                            <a href="<?=$informasi['url'];?>" class="btn btn-small btn-info">
+                                            <i class="btn-icon-only icon-download"></i>Download</a>                                    
+                                </div>
+                            </li>
+                            <?php } ?>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="span10">
+
                 <div class="box">
                     <div class="box-header">
                         <i class="icon-bar-chart"></i>
                         <h5>Grafik Berdasarkan Pangkat/Golongan</h5>
                     </div>
                     <div class="box-content">
-                        <div id ="mygraph1"></div>
+                        <div id ="mygraph2"></div>
                     </div>
                 </div>
-            </div>
-
-            <div class="span8">
-                <div class="box">
-                    <div class="box-header">
-                        <i class="icon-bar-chart"></i>
-                        <h5>Pengumuman</h5>
-                    </div>
-                    <div class="box-content">
-                        <div id ="mygraph1"></div>
-                    </div>
-                </div>
-            </div>
+            </div>           
         </div>
     </section>
     
     <script src="<?php echo base_url('assets/chart/highcharts.js');?>"></script>
     <script>
-        var chart1;  
+        var chart2;
         $(document).ready(function() {
-          /* GRAFIK PEMINATAN PER PRODI */
-              chart1 = new Highcharts.Chart(
+              chart2 = new Highcharts.Chart(
               {
                   
                  chart: {
-                    renderTo: 'mygraph1',
+                    renderTo: 'mygraph2',
                     plotBackgroundColor: null,
                     plotBorderWidth: null,
                     plotShadow: false
@@ -72,9 +87,9 @@
                     name: 'Browser share',
                     data: [
                     <?php
-                        foreach($dospeg as $result) {
-                          $golongan = $result['golongan'];
-                          $jumlah = $result['jumlah'];
+                        foreach($dospegpangkat as $result2) {
+                          $golongan = $result2['golongan'];
+                          $jumlah = $result2['jumlah'];
                           ?>
                             [ 
                                 '<?php echo $golongan ?>', <?php echo $jumlah; ?>
@@ -87,27 +102,4 @@
                 }]
               });
             }); 
-    </script>
-
-
-
-    <script type="text/javascript">
-        google.load('visualization', '1', {'packages': ['corechart']});
-        google.setOnLoadCallback(drawVisualization);
-        
-        function drawVisualization() {
-            visualization_data = new google.visualization.DataTable();
-            
-            visualization_data.addColumn('string', 'Golongan');
-            
-            visualization_data.addColumn('number', 'Jumlah');
-            
-            <?php foreach($dospeg as $result) { ?>
-            visualization_data.addRow(['<?php echo $result['golongan']?>', <?php echo $result['jumlah']?>]);
-            <?php } ?>        
-            visualization = new google.visualization.PieChart(document.getElementById('piechart1'));
-            visualization.draw(visualization_data, { height: 500});
-
-            
-        }
     </script>

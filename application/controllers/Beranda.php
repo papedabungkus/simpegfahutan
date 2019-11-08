@@ -12,8 +12,12 @@ class Beranda extends CI_Controller{
 
     function index()
     {
-        $dospeg = $this->db->query("SELECT DISTINCT d.golongan,(SELECT count(golongan) FROM dosen WHERE golongan=d.golongan) as jumlah FROM dosen d")->result_array();
-        $data['dospeg'] = $dospeg;
+        $dospegjumlah = $this->db->query("SELECT DISTINCT d.jenis_pd,(SELECT COUNT(id) FROM dosen WHERE jenis_pd=d.jenis_pd) AS jumlah FROM dosen d")->result_array();
+        $dospegpangkat = $this->db->query("SELECT DISTINCT d.golongan,(SELECT count(golongan) FROM dosen WHERE golongan=d.golongan) as jumlah FROM dosen d")->result_array();
+        $pengumuman = $this->db->query("SELECT * FROM pengumuman ORDER BY datetime DESC")->result_array();
+        $data['pengumuman'] = $pengumuman;
+        $data['dospegjumlah'] = $dospegjumlah;
+        $data['dospegpangkat'] = $dospegpangkat;
         $data['_view'] = 'beranda';
         $this->load->view('layouts/main',$data);
     }

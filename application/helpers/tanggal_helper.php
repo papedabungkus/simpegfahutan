@@ -42,4 +42,12 @@ function tgl_indo($day){
  $day_indo = $day[2]." ".$day[1]." ".$day[0];
  return $day_indo;
 }
+
+function tanggalwaktu($d)
+{
+    $datetime = explode (" ",$d);
+    $date = tgl_indo($datetime[0]);
+    $full = $date." Pukul ".$datetime['1']." WIT";
+    return $full;
+}
 ?>

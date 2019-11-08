@@ -61,7 +61,7 @@
                     <div id="Person-3" class="box">
                         <div class="box-header">
                             <i class="icon-user icon-large"></i>
-                            <h5>Peraturan Menteri</h5>
+                            <h5>Peraturan</h5>
                             
                         </div>
                         <div class="box-content box-table">
