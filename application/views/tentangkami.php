@@ -127,7 +127,7 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Dr. Ir. Cicillia M. E.    Susanti, M.Sc</td>
+                                    <td>Dr. Ir. Cicillia M. E.    Susanti, S.Hut., M.Si</td>
                                     <td>196907171994032002 </td>
                                     <td>IV/B</td>
                                     <td>Wakil Dekan Bidang    Umum dan Keuangan</td>
