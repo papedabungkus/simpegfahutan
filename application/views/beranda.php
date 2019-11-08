@@ -7,7 +7,7 @@
                         <h5>Grafik Berdasarkan Pangkat/Golongan</h5>
                     </div>
                     <div class="box-content">
-                        <div id="piechart1"></div>
+                        <div id ="mygraph1"></div>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     plotShadow: false
                  },   
                  title: {
-                    text: 'Jumlah Dosen/Pegawai Berdasarkan Pangkat/Golongan'
+                    text: ''
                  },
                  tooltip: {
                     formatter: function() {
