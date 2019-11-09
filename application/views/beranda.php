@@ -4,7 +4,7 @@
             <div class="span6">
                 <div class="box pattern pattern-sandstone">
                     <div class="box-header">
-                        <i class="icon-list"></i>
+                        <i class="icon-search"></i>
                         <h5>Pengumuman</h5>
                     </div>
                     <div class="box-content box-list collapse in">
