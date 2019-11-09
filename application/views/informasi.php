@@ -21,7 +21,7 @@
                                 <li>
                                     <a href="#Person-3">
                                         <i class="icon-chevron-right pull-right"></i>
-                                        Peraturan Menteri
+                                        Peraturan
                                     </a>
                                 </li> 
                             

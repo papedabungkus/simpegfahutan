@@ -97,6 +97,11 @@
                                         <i class="icon-envelope icon-large"></i> Surat
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo base_url('pengumuman');?>">
+                                        <i class="icon-search icon-large"></i> Pengumuman
+                                    </a>
+                                </li>
                             <?php } }?>
                             </ul>
                         </div>

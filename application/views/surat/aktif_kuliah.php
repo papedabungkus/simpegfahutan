@@ -70,7 +70,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <td>Program Studi</td><td>:</td><td><?php echo $prodi; ?></td>
     </tr>
     <tr>
-        <td>Fakultas</td><td>:</td><td><?php echo $fakultas; ?></td>
+        <td>Jurusan</td><td>:</td><td>KEHUTANAN</td>
     </tr>
     <tr>
         <td colspan="3">

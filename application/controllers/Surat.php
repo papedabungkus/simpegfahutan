@@ -17,7 +17,7 @@ class Surat extends CI_Controller{
             $idsurat = '';
         }
         $querysurat = $this->db->query("SELECT * FROM surat")->result_array();
-        $querydosen = $this->db->query("SELECT * FROM dosen")->result_array();
+        $querydosen = $this->db->query("SELECT * FROM dospeg")->result_array();
         $querymahasiswa = $this->db->query("SELECT * FROM mahasiswa")->result_array();
         $data['idsurat'] = $idsurat;
         $data['datasurat'] = $querysurat;
@@ -42,8 +42,8 @@ class Surat extends CI_Controller{
     {
         if(isset($_POST['btnCetak'])){
             $iddosen = $_POST['cmbDosen'];
-            $namadosen = $this->db->query("SELECT nama FROM dosen WHERE id=$iddosen")->row()->nama;
-            $nipdosen = $this->db->query("SELECT nip FROM dosen WHERE id=$iddosen")->row()->nip;
+            $namadosen = $this->db->query("SELECT nama FROM dospeg WHERE id=$iddosen")->row()->nama;
+            $nipdosen = $this->db->query("SELECT nip FROM dospeg WHERE id=$iddosen")->row()->nip;
             $pendidikan = $_POST['pendidikan'];
             $prodikampus = $_POST['prodikampus'];
             $lamastudi = $_POST['lamastudi'];

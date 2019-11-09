@@ -18,7 +18,7 @@ class Arsip extends CI_Controller{
     function index($idcmbdosen=NULL)
     {
         if($this->ion_auth->is_admin()){
-            $datadosen = $this->db->query("SELECT * FROM dosen")->result_array();
+            $datadosen = $this->db->query("SELECT * FROM dospeg")->result_array();
             if(isset($_POST['btnCari']) || $this->uri->segment('3')<>'') {
                 
                 if($this->uri->segment('3')<>''){
@@ -33,9 +33,9 @@ class Arsip extends CI_Controller{
                 (SELECT ad.id FROM arsip_dosen ad WHERE ad.id_arsip=a.id AND ad.id_dosen='$idDosen') AS idarsipdosen
                 FROM arsip a")->result_array();
                 $q_foto = $this->db->query("SELECT a.*,
-                (SELECT ad.url FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.id='$idDosen') AS url
+                (SELECT ad.url FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.id='$idDosen') AS url
                 FROM arsip a WHERE a.nama_dokumen='FOTO'")->row()->url;
-                $q_info = $this->db->query("SELECT * FROM dosen WHERE id='$idDosen'");
+                $q_info = $this->db->query("SELECT * FROM dospeg WHERE id='$idDosen'");
                 if($q_info->num_rows()>0){
                     $nama = $q_info->row()->nama;
                     $nip = $q_info->row()->nip;
@@ -56,14 +56,14 @@ class Arsip extends CI_Controller{
             $datadosen = "";
             $userid = $this->ion_auth->user()->row()->id;
             $q_arsip = $this->db->query("SELECT a.*,
-            (SELECT ad.terakhir_diubah FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS terakhir_diubah,
-            (SELECT ad.url FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS url
+            (SELECT ad.terakhir_diubah FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS terakhir_diubah,
+            (SELECT ad.url FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS url
             FROM arsip a")->result_array();
             $q_foto = $this->db->query("SELECT a.*,
-            (SELECT ad.terakhir_diubah FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS terakhir_diubah,
-            (SELECT ad.url FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS url
+            (SELECT ad.terakhir_diubah FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS terakhir_diubah,
+            (SELECT ad.url FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE ad.id_arsip=a.id AND d.userid='$userid') AS url
             FROM arsip a WHERE a.nama_dokumen='FOTO'")->row()->url;
-            $q_info = $this->db->query("SELECT * FROM dosen WHERE userid='$userid'");
+            $q_info = $this->db->query("SELECT * FROM dospeg WHERE userid='$userid'");
             $nama = $q_info->row()->nama;
             $nip = $q_info->row()->nip;
         } 
@@ -89,9 +89,9 @@ class Arsip extends CI_Controller{
             $datetimenow = date('Y-m-d H:i:s');
             $url = 'uploads/'.$nama;
             $q_arsip = $this->db->query("SELECT a.id AS ArsipID, a.nama_dokumen, a.jenis_file, a.max_size, 
-                (SELECT ad.terakhir_diubah FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE id_arsip=a.id AND d.id='$iddosen') AS terakhir_diubah,
-                (SELECT ad.url FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE id_arsip=a.id AND d.id='$iddosen') AS url,
-                (SELECT d.id FROM arsip_dosen ad JOIN dosen d ON d.id=ad.id_dosen WHERE id_arsip=a.id AND d.id='$iddosen') AS iddosen
+                (SELECT ad.terakhir_diubah FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE id_arsip=a.id AND d.id='$iddosen') AS terakhir_diubah,
+                (SELECT ad.url FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE id_arsip=a.id AND d.id='$iddosen') AS url,
+                (SELECT d.id FROM arsip_dosen ad JOIN dospeg d ON d.id=ad.id_dosen WHERE id_arsip=a.id AND d.id='$iddosen') AS iddosen
                 FROM arsip a");
             $query = $this->db->query("SELECT id FROM arsip_dosen WHERE id_arsip=$idarsip AND id_dosen=$iddosen");
             if($query->num_rows()==0){

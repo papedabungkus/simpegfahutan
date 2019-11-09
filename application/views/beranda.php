@@ -22,7 +22,27 @@
                                 </div>
                             </li>
                             <?php } ?>
-                        </ul>                        
+                        </ul>  
+                        <div class="box-collapse">
+                            <button class="btn btn-box" data-toggle="collapse" data-target=".more-list">
+                                Show More
+                            </button>
+                        </div>
+                        <ul class="more-list collapse out">
+                        <?php 
+                            foreach ($pengumumannext as $informasinext) {
+                            ?>
+                            <li>
+                                <div>
+                                    <a class="news-item-title" style="text-decoration: none;"><?php echo tanggalwaktu($informasinext['datetime']);?></a>
+                                    <p class="news-item-preview">
+                                        <?=$informasinext['judul'];?></p>
+                                            <a href="<?=$informasinext['url'];?>" class="btn btn-small btn-info">
+                                            <i class="btn-icon-only icon-download"></i>Download</a>                                    
+                                </div>
+                            </li>
+                            <?php } ?>
+                        </ul>                      
                     </div>
                 </div>
             </div>
