@@ -14,17 +14,17 @@
                             ?>
                             <li>
                                 <div>
-                                    <a class="news-item-title" style="text-decoration: none;"><?php echo tanggalwaktu($informasi['datetime']);?></a>
+                                    <a class="news-item-title" style="color:#047a2c; text-decoration: none;"><?php echo tanggalwaktu($informasi['datetime']);?></a>
                                     <p class="news-item-preview">
                                         <?=$informasi['judul'];?></p>
-                                            <a href="<?=$informasi['url'];?>" class="btn btn-small btn-info">
+                                            <a href="<?=$informasi['url'];?>" class="btn btn-small btn-success">
                                             <i class="btn-icon-only icon-download"></i>Download</a>                                    
                                 </div>
                             </li>
                             <?php } ?>
                         </ul>  
                         <div class="box-collapse">
-                            <button class="btn btn-box" data-toggle="collapse" data-target=".more-list">
+                            <button style="color:#047a2c;"  class="btn btn-box" data-toggle="collapse" data-target=".more-list">
                                 Show More
                             </button>
                         </div>

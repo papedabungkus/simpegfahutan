@@ -1,4 +1,6 @@
-
+<style>
+a:link { color:#047a2c;} 
+</style>
         <section class="page container">
             <div class="row">
                 <div class="span3">

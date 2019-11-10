@@ -12,6 +12,7 @@ class Pengumuman extends CI_Controller{
 
     function index()
     {
+        $data['pengumuman'] = $this->db->query("SELECT * FROM pengumuman ORDER BY datetime DESC")->result_array();
         $data['_view'] = 'pengumuman';
         $this->load->view('layouts/main',$data);
     }

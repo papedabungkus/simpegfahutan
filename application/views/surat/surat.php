@@ -15,7 +15,7 @@
                             </div>
                             <div class="input-prepend">
                                 <br>
-                                <button name="btnCari" type="submit" class="btn btn-primary">
+                                <button name="btnCari" type="submit" class="btn btn-success">
                                 <i class="icon-forward"></i>
                                     Selanjutnya
                                 </button>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="input-prepend">
                                 <br>
-                                <button name="btnCetak" type="submit" class="btn btn-primary">
+                                <button name="btnCetak" type="submit" class="btn btn-success">
                                 <i class="icon-print"></i>
                                     Cetak
                                 </button>
@@ -116,7 +116,7 @@
                             </div>
                             <p>&nbsp;</p>
                             <div class="input-prepend">
-                                <button name="btnCetak" type="submit" class="btn btn-primary">
+                                <button name="btnCetak" type="submit" class="btn btn-success">
                                 <i class="icon-print"></i>
                                     Cetak
                                 </button>

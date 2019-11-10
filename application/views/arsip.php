@@ -16,7 +16,7 @@
                             </div>
                             <div class="input-prepend">
                                 <br>
-                                <button name="btnCari" type="submit" class="btn btn-primary">
+                                <button name="btnCari" type="submit" class="btn btn-success">
                                 <i class="icon-ok"></i>
                                     Pilih
                                 </button>
