@@ -7707,18 +7707,18 @@ table.tablesorter .headerSortUp:after {
   position: fixed;
 }
 .body-nav.body-nav-horizontal {
-  background-color: #1f3a4d;
-  background-image: -moz-linear-gradient(top, #1f3a4d, #1f3a4d);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1f3a4d), to(#1f3a4d));
+  background-color: #009933;
+  background-image: -moz-linear-gradient(top, #009933, #009933);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#009933), to(#009933));
   background-image: -webkit-linear-gradient(top, #1f3a4d, #1f3a4d);
   background-image: -o-linear-gradient(top, #1f3a4d, #1f3a4d);
   background-image: linear-gradient(to bottom, #1f3a4d, #1f3a4d);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1f3a4d', endColorstr='#ff1f3a4d', GradientType=0);
   border-bottom: 2px solid #2e5571;
-  -webkit-box-shadow: 1px 1px 2px #1f3a4d;
-  -moz-box-shadow: 1px 1px 2px #1f3a4d;
-  box-shadow: 1px 1px 2px #1f3a4d;
+  -webkit-box-shadow: 1px 1px 2px #009933;
+  -moz-box-shadow: 1px 1px 2px #009933;
+  box-shadow: 1px 1px 2px #009933;
   height: 70px;
 }
 .body-nav.body-nav-horizontal ul li {
