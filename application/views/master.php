@@ -4,10 +4,12 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="icon-user"></i>
-                        <h5>Master Data Dosen
-                        </h5>
+                        <h5>Master Data Dosen</h5>
+                        <button class="btn btn-box-right" data-toggle="collapse" data-target=".box-list">
+                            <i class="icon-reorder"></i>
+                        </button>
                     </div>
-                    <div class="box-content">
+                    <div class="box-content box-list collapse in">
                         <table class="table table-hover tablesorter">
                             <thead>
                                 <tr>
@@ -59,10 +61,12 @@
                 <div class="box">
                     <div class="box-header">
                         <i class="icon-user"></i>
-                        <h5>Master Data Pegawai
-                        </h5>
+                        <h5>Master Data Pegawai</h5>
+                        <button class="btn btn-box-right" data-toggle="collapse" data-target=".box-list2">
+                            <i class="icon-reorder"></i>
+                        </button>
                     </div>
-                    <div class="box-content">
+                    <div class="box-content box-list2 collapse in">
                         <table class="table table-hover tablesorter">
                             <thead>
                                 <tr>
