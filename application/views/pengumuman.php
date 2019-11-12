@@ -16,8 +16,9 @@
                             <div class="input-prepend">
                                 <select name="kategori">
                                     <option value="">-- Pilih Salah Satu --</option>
-                                    <option value="peraturan">Peraturan</option>
                                     <option value="agenda">Agenda</option>
+                                    <option value="peraturan">Peraturan</option>
+                                    <option value="umum">Umum</option>
                                 </select>
                             </div>
                             <p>File Pengumuman</p>
