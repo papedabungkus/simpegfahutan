@@ -48,7 +48,7 @@ a:link { color:#047a2c;}
                                 <legend class="lead">
                                 Pegawai Negeri Sipil Golongan <?=$res_gol_dosen['golongan'];?>
                                 </legend>
-                                <table class="table table-hover tablesorter">
+                                <table class="table table-hover table-striped tablesorter">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
@@ -91,7 +91,7 @@ a:link { color:#047a2c;}
                                 <legend class="lead">
                                 Pegawai Negeri Sipil Golongan <?=$res_gol_pegawai['golongan'];?>
                                 </legend>
-                                <table class="table table-hover tablesorter">
+                                <table class="table table-hover table-striped tablesorter">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
