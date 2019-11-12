@@ -140,7 +140,7 @@ a:link { color:#047a2c;}
                                     <td><?php echo $no++; ?></td>
                                     <td><?php echo $r_peraturan['datetime']; ?></td>
                                     <td><?php echo $r_peraturan['judul']; ?></td>
-                                    <td><a style="color:#047a2c; text-decoration: none;" href="<?php echo $r_peraturan['url']; ?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-download"> Unduh</i></a></td>
+                                    <td><a style="color:#047a2c; text-decoration: none;" href="<?php echo $r_peraturan['url']; ?>" class="btn btn-small btn-default"><i class="btn-icon-only icon-download"> Unduh</i></a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
