@@ -12,6 +12,10 @@ class Informasi extends CI_Controller{
 
     function index()
     {
+        $gol_dosen = $this->db->query("SELECT DISTINCT golongan FROM dospeg WHERE jenis_pd='dosen'")->result_array();
+        $data['gol_dosen'] = $gol_dosen;
+        $gol_pegawai = $this->db->query("SELECT DISTINCT golongan FROM dospeg WHERE jenis_pd='pegawai' ORDER BY golongan DESC")->result_array();
+        $data['gol_pegawai'] = $gol_pegawai;
         $data['_view'] = 'informasi';
         $this->load->view('layouts/main',$data);
     }

@@ -43,8 +43,41 @@ a:link { color:#047a2c;}
                             <i class="icon-user icon-large"></i>
                             <h5>DUK Dosen Fahutan Unipa (Keadaan Januari 2019)</h5>
                         </div>
-                        <div class="box-content box-table">
-                        <img src="<?php echo base_url('assets/dukdosen.png')?>" />
+                        <div class="box-hide-me box-content collapse in">
+                            <?php foreach($gol_dosen AS $res_gol_dosen){ ?>
+                                <legend class="lead">
+                                Pegawai Negeri Sipil Golongan <?=$res_gol_dosen['golongan'];?>
+                                </legend>
+                                <table class="table table-hover tablesorter">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama</th>
+                                            <th>NIP</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Gol.</th>
+                                            <th>Jabatan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                <?php
+                                $goldosen = $res_gol_dosen['golongan'];
+                                $q_dosen = $this->db->query("SELECT * FROM dospeg WHERE golongan='$goldosen' AND jenis_pd='dosen' ORDER BY MID(nip,9,6) ASC")->result_array();
+                                $no=1;
+                                foreach($q_dosen as $h_dosen){ 
+                                ?>
+                                <tr>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $h_dosen['nama']; ?></td>
+                                    <td><?php echo $h_dosen['nip']; ?></td>
+                                    <td><?php echo $h_dosen['jk']; ?></td>
+                                    <td><?php echo $h_dosen['golongan']; ?></td>
+                                    <td><?php echo $h_dosen['jabatan']; ?></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                            </table>
+                            <?php } ?>
                         </div>
                     </div>
                 
@@ -52,12 +85,43 @@ a:link { color:#047a2c;}
                         <div class="box-header">
                             <i class="icon-user icon-large"></i>
                             <h5>DUK Pegawai Fahutan Unipa (Keadaan Januari 2019)</h5>
-                            
                         </div>
-                        <div class="box-content box-table">
-                        <img src="<?php echo base_url('assets/dukpegawai.png')?>" />
+                        <div class="box-hide-me box-content collapse in">
+                            <?php foreach($gol_pegawai AS $res_gol_pegawai){ ?>
+                                <legend class="lead">
+                                Pegawai Negeri Sipil Golongan <?=$res_gol_pegawai['golongan'];?>
+                                </legend>
+                                <table class="table table-hover tablesorter">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Nama</th>
+                                            <th>NIP</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Gol.</th>
+                                            <th>Jabatan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                <?php
+                                $golpegawai = $res_gol_pegawai['golongan'];
+                                $q_pegawai = $this->db->query("SELECT * FROM dospeg WHERE golongan='$golpegawai' AND jenis_pd='pegawai' ORDER BY MID(nip,9,6) ASC")->result_array();
+                                $no=1;
+                                foreach($q_pegawai as $h_pegawai){ 
+                                ?>
+                                <tr>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $h_pegawai['nama']; ?></td>
+                                    <td><?php echo $h_pegawai['nip']; ?></td>
+                                    <td><?php echo $h_pegawai['jk']; ?></td>
+                                    <td><?php echo $h_pegawai['golongan']; ?></td>
+                                    <td><?php echo $h_pegawai['jabatan']; ?></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                            </table>
+                            <?php } ?>
                         </div>
-
                     </div>
                 
                     <div id="Person-3" class="box">
