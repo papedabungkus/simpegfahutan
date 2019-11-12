@@ -73,21 +73,18 @@
                                     <td><?php echo $a['nama_dokumen']; ?></td>
                                     <td><?php echo $a['jenis_file']; ?></td>
                                     <td><?php echo $a['terakhir_diubah']; ?></td>
-                                    <td class="td-actions">
-                                    <?php if($a['url']==""){ ?>
-                                        
-                                        <?php if($this->ion_auth->is_admin()){ ?>
+                                    <td class="td-actions">                                     
+                                        <?php if($this->ion_auth->is_admin()){
+                                            if($a['url']==""){ ?>
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="<?php echo $a['id']; ?>" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-upload"> Unggah</i>
                                         </a>
-                                        <?php } ?>
-                                    <?php } else { ?>
-                                        <a target="BLANK" href="<?php echo $a['url']; ?>" class="btn btn-small btn-primary">
-                                            <i class="btn-icon-only icon-download"> Unduh</i>
-                                        </a>
-                                        <?php if($this->ion_auth->is_admin()){ ?>
+                                        <?php } else { ?>
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="<?php echo $a['id']; ?>" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-upload"> Ubah</i>
+                                        </a>
+                                        <a target="BLANK" href="<?php echo $a['url']; ?>" class="btn btn-small btn-primary">
+                                            <i class="btn-icon-only icon-download"> Unduh</i>
                                         </a>
                                         <?php if (isset($_POST['cmbDosen'])){ ?>
                                         <a onclick="confirm('Are You Sure?')" href="<?php echo site_url().'arsip/remove/'.$a['idarsipdosen'].'/'.$_POST['cmbDosen']; ?>" class="btn btn-small btn-danger">
@@ -97,8 +94,17 @@
                                         <a onclick="confirm('Are You Sure?')" href="<?php echo site_url().'arsip/remove/'.$a['idarsipdosen'].'/'.$urisegment; ?>" class="btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> Hapus</i>
                                         </a>
-                                        <?php } } ?>
-                                   <?php }?>
+                                        <?php } }  } else {
+                                            if($a['url']==""){ ?>
+                                            <a class="btn btn-small btn-primary disabled">
+                                            <i class="btn-icon-only icon-download"> Unduh</i>
+                                            </a>
+                                            <?php } else { ?>
+                                            <a target="BLANK" href="<?php echo $a['url']; ?>" class="btn btn-small btn-primary">
+                                            <i class="btn-icon-only icon-download"> Unduh</i>
+                                            </a>
+                                            <?php } ?>
+                                        <?php } ?>
                                     </td>
                                 </tr>
                             <?php } ?>
