@@ -12,6 +12,14 @@
                             <div class="input-prepend">
                                 <textarea name="judulpengumuman" class="form-control span5" rows="3"></textarea>
                             </div>
+                            <p>Kategori Pengumuman</p>
+                            <div class="input-prepend">
+                                <select name="kategori">
+                                    <option value="">-- Pilih Salah Satu --</option>
+                                    <option value="peraturan">Peraturan</option>
+                                    <option value="agenda">Agenda</option>
+                                </select>
+                            </div>
                             <p>File Pengumuman</p>
                             <div class="input-prepend">
                             <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/dropzone/dropzone.min.css') ?>">

@@ -25,7 +25,8 @@ class Pengumuman extends CI_Controller{
                             ->get('pengumuman')
                             ->row();
             $judulpengumuman = $_POST['judulpengumuman'];
-            $dataupdate = array('judul'=>$judulpengumuman);
+            $kategori = $_POST['kategori'];
+            $dataupdate = array('judul'=>$judulpengumuman, 'kategori'=>$kategori);
             $this->db->where('id',$lastid->id);
             $this->db->update('pengumuman',$dataupdate);
         }
@@ -39,7 +40,6 @@ class Pengumuman extends CI_Controller{
         $this->load->library('upload',$config);
 
         if($this->upload->do_upload('userfile')){
-            $judulpengumuman = $_POST['judulpengumuman'];
             $tglpengumuman = date('Y-m-d H:i:s');
             $nama=$this->upload->data('file_name');
             $url = 'uploads/pengumuman/'.$nama;
