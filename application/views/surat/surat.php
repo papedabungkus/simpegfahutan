@@ -30,12 +30,8 @@
                             <h4>Parameter Isian Surat Tugas Belajar</h4>
                             <p>Nama Dosen</p>
                             <div class="input-prepend">
-                                <select name="cmbDosen">
-                                    <option value="">-- Pilih Salah Satu --</option>
-                                    <?php foreach ($datadosen as $res2) { ?>
-                                    <option value="<?php echo $res2['id'];?>"><?php echo $res2['nama'];?></option>
-                                <?php } ?>
-                                </select>
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="txtDosen" class="span7" type="text" id="txtDosen" placeholder="Ketik NIP/Nama Dosen">
                             </div>
                             <p>Program Pendidikan</p>
                             <div class="input-prepend">
@@ -131,7 +127,11 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#mahasiswa").autocomplete({
-                source: "<?php echo site_url('surat/get_autocomplete/?');?>"
+                source: "<?php echo site_url('surat/get_autocomplete_mahasiswa/?');?>"
+                });
+
+                $("#txtDosen").autocomplete({
+                source: "<?php echo site_url('surat/get_autocomplete_dosen/?');?>"
                 });
             });
         </script>

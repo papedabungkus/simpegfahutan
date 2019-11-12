@@ -27,7 +27,7 @@ class Surat extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }
 
-    function get_autocomplete(){
+    function get_autocomplete_mahasiswa(){
         if (isset($_GET['term'])) {
             $result = $this->Surat_model->search_mahasiswa($_GET['term']);
             if (count($result) > 0) {
@@ -38,12 +38,22 @@ class Surat extends CI_Controller{
         }
     }
 
+    function get_autocomplete_dosen(){
+        if (isset($_GET['term'])) {
+            $result = $this->Surat_model->search_dosen($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nip." - ".$row->nama;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
     function cetaksurattugasbelajar() 
     {
         if(isset($_POST['btnCetak'])){
-            $iddosen = $_POST['cmbDosen'];
-            $namadosen = $this->db->query("SELECT nama FROM dospeg WHERE id=$iddosen")->row()->nama;
-            $nipdosen = $this->db->query("SELECT nip FROM dospeg WHERE id=$iddosen")->row()->nip;
+            $nipdosen = substr($_POST['txtDosen'],0,18);
+            $namadosen = $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipdosen")->row()->nama;
             $pendidikan = $_POST['pendidikan'];
             $prodikampus = $_POST['prodikampus'];
             $lamastudi = $_POST['lamastudi'];
