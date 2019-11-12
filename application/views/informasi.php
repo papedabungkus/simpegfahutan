@@ -128,10 +128,23 @@ a:link { color:#047a2c;}
                         <div class="box-header">
                             <i class="icon-user icon-large"></i>
                             <h5>Peraturan</h5>
-                            
                         </div>
-                        <div class="box-content box-table">
-                        
+                        <div class="box-hide-me box-content collapse in">
+                                <table class="table table-hover tablesorter">
+                                    <tbody>
+                                <?php
+                                $no = 1;
+                                foreach($peraturan as $r_peraturan){ 
+                                ?>
+                                <tr>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $r_peraturan['datetime']; ?></td>
+                                    <td><?php echo $r_peraturan['judul']; ?></td>
+                                    <td><a style="color:#047a2c; text-decoration: none;" href="<?php echo $r_peraturan['url']; ?>" class="btn btn-small btn-success"><i class="btn-icon-only icon-download"> Unduh</i></a></td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                            </table>
                         </div>
 
                     </div>     
