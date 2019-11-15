@@ -91,7 +91,7 @@
                             <?php } ?>
                             </tbody>
                         </table>
-                        <div class="pull-right">
+                        <div class="box-footer">
                             <?php echo $this->pagination->create_links(); ?>    
                         </div>
                     </div>
