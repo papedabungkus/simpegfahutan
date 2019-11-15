@@ -43,7 +43,7 @@
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
-                                        <a onclick="confirm('Are You Sure?')" href="" class="btn btn-small btn-danger">
+                                        <a onclick="confirm('Are You Sure?')" href="<?php echo base_url('master/delete/').$r_dosen['id'];?>" class="btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> </i>
                                         </a>
                                     </td>
@@ -98,7 +98,7 @@
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
-                                        <a onclick="confirm('Are You Sure?')" href="" class="btn btn-small btn-danger">
+                                        <a onclick="confirm('Are You Sure?')" href="<?php echo base_url('master/delete/').$r_peg['id'];?>" class="btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> </i>
                                         </a>
                                     </td>

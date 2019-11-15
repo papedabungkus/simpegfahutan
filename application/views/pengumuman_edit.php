@@ -7,19 +7,31 @@
                         <h5>Form Isi Pengumuman</h5>
                     </div>
                     <div class="box-content">
-                        <form class="form-inline" action="<?php echo base_url('pengumuman/add'); ?>" method="POST">                      
+                        <form class="form-inline" action="<?php echo base_url('pengumuman/edit/').$pengumumanx['id']; ?>" method="POST">                      
                             <p>Judul Pengumuman</p>
                             <div class="input-prepend">
-                                <textarea name="judulpengumuman" class="form-control span5" rows="3"></textarea>
+                                <textarea name="judulpengumuman" class="form-control span5" rows="3">
+                                <?php echo ($this->input->post('judul') ? $this->input->post('judul') : $pengumumanx['judul']); ?>
+                                </textarea>
                             </div>
                             <p>Kategori Pengumuman</p>
                             <div class="input-prepend"> 
-                                <select name="kategori">
-                                    <option value="">-- Pilih Salah Satu --</option>
-                                    <option value="agenda">Agenda</option>
-                                    <option value="peraturan">Peraturan</option>
-                                    <option value="umum">Umum</option>
-                                </select>
+                            <select name="kategori">
+                                <option value="">select</option>
+                                <?php 
+                                $kategori_values = array(
+                                    'peraturan'=>'Peraturan',
+                                    'umum'=>'Umum',
+                                );
+
+                                foreach($kategori_values as $value => $display_text)
+                                {
+                                    $selected = ($value == $pengumumanx['kategori']) ? ' selected="selected"' : "";
+
+                                    echo '<option value="'.$value.'" '.$selected.'>'.$display_text.'</option>';
+                                } 
+                                ?>
+                            </select>
                             </div>
                             <p>File Pengumuman</p>
                             <div class="input-prepend">
@@ -83,6 +95,9 @@
                                     <td><?php echo $r_pengumuman['judul']; ?></td>
                                     <td><?php echo $r_pengumuman['url']; ?></td>
                                     <td class="td-actions">
+                                        <a href="<?php echo base_url('pengumuman/edit/').$r_pengumuman['id'];?>" class="btn btn-small btn-success edit_button">
+                                            <i class="btn-icon-only icon-pencil"> </i>
+                                        </a>
                                         <a onclick="confirm('Are You Sure?')" href="<?php echo base_url('pengumuman/delete/').$r_pengumuman['id'];?>" class="btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> </i>
                                         </a>

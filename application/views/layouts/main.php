@@ -38,7 +38,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                         <li>
-                                            <a href="demo-horizontal-nav.html">Ubah Kata Sandi</a>
+                                            <a href="demo-horizontal-nav.html" data-toggle="modal" data-target="#modalUbahPassword">Ubah Kata Sandi</a>
                                         </li>
                                         <li>
                                             <a href="<?php echo base_url('auth/logout');?>">Keluar</a>
@@ -109,9 +109,7 @@
 	<?php	if(isset($_view) && $_view)
 	    $this->load->view($_view);
     ?>
-    
-
-    </div>
+        </div>
         </div>
 
         <div id="spinner" class="spinner" style="display:none;">
@@ -151,6 +149,34 @@
                 $(".chosen").chosen();
             });
         </script>
-	</body>
+
+
+
+
+        <!-- Modal -->
+<div class="modal fade" id="modalUbahPassword" tabindex="-1" role="dialog" aria-labelledby="modalUbahPasswordTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Ubah Password</h5>
+      </div>
+      <div class="modal-body">
+        <form  action="<?php echo base_url('auth/login'); ?>" method="POST" id="loginForm" class="form-signin" autocomplete="off">
+                
+                <div class="input-prepend">
+                <label>Password</label>
+                    <span class="add-on"><i class="icon-key"></i></span>
+                    <input type='password' class='span4' id='password' name='password'/>
+                 </div>         
+                            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>
- 

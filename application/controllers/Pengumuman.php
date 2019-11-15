@@ -4,6 +4,7 @@ class Pengumuman extends CI_Controller{
     function __construct()
     {
         parent::__construct();
+        $this->load->model('Pengumuman_model');
         if (!$this->ion_auth->logged_in()) {
             redirect('auth','refresh');
         }    
@@ -12,7 +13,15 @@ class Pengumuman extends CI_Controller{
 
     function index()
     {
-        $data['pengumuman'] = $this->db->query("SELECT * FROM pengumuman ORDER BY datetime DESC")->result_array();
+        $params['limit'] = RECORDS_PER_PAGE; 
+        $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
+        
+        $config = $this->config->item('pagination');
+        $config['base_url'] = site_url('pengumuman/index?');
+        $config['total_rows'] = $this->Pengumuman_model->get_all_pengumuman_count();
+        $this->pagination->initialize($config);
+
+        $data['pengumuman'] = $this->Pengumuman_model->get_all_pengumuman($params);
         $data['_view'] = 'pengumuman';
         $this->load->view('layouts/main',$data);
     }
@@ -47,4 +56,20 @@ class Pengumuman extends CI_Controller{
             $this->insert_id = $this->db->insert_id();
         }   
     }
+
+    function delete($id)
+    {
+        $pengumuman = $this->Pengumuman_model->get_pengumuman($id);
+
+        // check if the pengumuman exists before trying to delete it
+        if(isset($pengumuman['id']))
+        {
+            $this->Pengumuman_model->delete_pengumuman($id);
+            redirect('pengumuman/index');
+        }
+        else
+            show_error('The pengumuman you are trying to delete does not exist.');
+    }
+
+    
 }
