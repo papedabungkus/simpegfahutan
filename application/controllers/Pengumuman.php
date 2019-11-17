@@ -56,19 +56,15 @@ class Pengumuman extends CI_Controller{
             $this->insert_id = $this->db->insert_id();
         }   
     }
-
-    function delete($id)
+ 
+    function delete()
     {
-        $pengumuman = $this->Pengumuman_model->get_pengumuman($id);
-
-        // check if the pengumuman exists before trying to delete it
-        if(isset($pengumuman['id']))
-        {
-            $this->Pengumuman_model->delete_pengumuman($id);
-            redirect('pengumuman/index');
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
+        if ($id <> '') {
+            $pengumuman = $this->Pengumuman_model->get_pengumuman($id);
+            echo 'data dengan id = '.$id.' berhasil dihapus';
         }
-        else
-            show_error('The pengumuman you are trying to delete does not exist.');
+        
     }
 
     

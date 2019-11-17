@@ -83,9 +83,10 @@
                                     <td><?php echo $r_pengumuman['judul']; ?></td>
                                     <td><?php echo $r_pengumuman['url']; ?></td>
                                     <td class="td-actions">
-                                        <a onclick="confirm('Are You Sure?')" href="<?php echo base_url('pengumuman/delete/').$r_pengumuman['id'];?>" class="btn btn-small btn-danger">
+                                        <a href="" data-id="<?php echo $r_pengumuman['id'];?>" class="hapus btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> </i>
                                         </a>
+                                        
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -99,3 +100,23 @@
             </div>
         </div>
 </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(".hapus").click(function() {
+        var jawab = confirm("Apakah anda yakin akan menghapus ?");
+        if (jawab === true){
+            var hapus = false;
+            if (!hapus) {
+                hapus = true;
+                $.post('<?php echo base_url('pengumuman/delete/')?>',{id: $(this).attr('data-id')},
+                function(data){
+                    alert(data);
+                });
+                hapus = false;
+            }
+        } else {
+            return false;
+        }
+    })
+</script>

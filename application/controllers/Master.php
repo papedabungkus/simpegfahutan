@@ -3,6 +3,7 @@ class Master extends CI_Controller{
     function __construct()
     {
         parent::__construct();
+        $this->load->model('Master_model');
         if (!$this->ion_auth->logged_in()) {
             redirect('auth','refresh');
         }
@@ -18,17 +19,13 @@ class Master extends CI_Controller{
         $this->load->view('layouts/main',$data);
     }
 
-    function delete($id)
+    function delete()
     {
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
         $dospeg = $this->db->get_where('dospeg',array('id'=>$id))->row_array();
-
-        // check if the user exists before trying to delete it
-        if(isset($dospeg['id']))
-        {
+        if ($id <> '') {
             $this->db->delete('dospeg',array('id'=>$id));
-            redirect('master/index');
+            echo 'Data Dosen/Pegawai dengan nama = <b>'.$dospeg['nama'].'</b> berhasil dihapus';
         }
-        else
-            show_error('Data yang akan dihapus tidak tersedia');
     }
 }

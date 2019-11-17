@@ -37,7 +37,7 @@
                                     <td><?php echo $r_dosen['golongan']; ?></td>
                                     <td><?php echo $r_dosen['jabatan']; ?></td>
                                     <td width="10%" class="td-actions">
-                                        <a href="" id="ubahdata" class="btn btn-small btn-default detail_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-default detail_button" data-id="" data-toggle="modal" data-target="#modalDetailDospeg">
                                             <i class="btn-icon-only icon-search"> </i>
                                         </a>
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
@@ -98,7 +98,7 @@
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
-                                        <a onclick="confirm('Are You Sure?')" href="<?php echo base_url('master/delete/').$r_peg['id'];?>" class="btn btn-small btn-danger">
+                                        <a data-id="<?php echo $r_peg['id'];?>" href="" class="hapus btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> </i>
                                         </a>
                                     </td>
@@ -111,3 +111,51 @@
             </div>
         </div>
     </section>
+
+
+
+           <!-- Modal -->
+<div class="modal fade" id="modalDetailDospeg" tabindex="-1" role="dialog" aria-labelledby="modalDetailDospeg" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Detail</h5>
+      </div>
+      <div class="modal-body">
+        <form  action="<?php echo base_url('auth/login'); ?>" method="POST" id="loginForm" class="form-signin" autocomplete="off">
+                
+                <div class="input-prepend">
+                <label>Password</label>
+                    <span class="add-on"><i class="icon-key"></i></span>
+                    <input type='password' class='span4' id='password' name='password'/>
+                 </div>         
+                            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(".hapus").click(function() {
+        var jawab = confirm("Apakah anda yakin akan menghapus ?");
+        if (jawab === true){
+            var hapus = false;
+            if (!hapus) {
+                hapus = true;
+                $.post('<?php echo base_url('master/delete/')?>',{id: $(this).attr('data-id')},
+                function(data){
+                    alert(data);
+                });
+                hapus = false;
+            }
+        } else {
+            return false;
+        }
+    })
+</script>
