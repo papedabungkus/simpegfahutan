@@ -25,7 +25,7 @@ class Master extends CI_Controller{
         $dospeg = $this->db->get_where('dospeg',array('id'=>$id))->row_array();
         if ($id <> '') {
             $this->db->delete('dospeg',array('id'=>$id));
-            echo 'Data Dosen/Pegawai dengan nama = <b>'.$dospeg['nama'].'</b> berhasil dihapus';
+            echo "Data Dosen/Pegawai dengan nama = <b>".$dospeg['nama']."</b> berhasil dihapus";
         }
     }
 }
