@@ -134,7 +134,7 @@ class Auth extends CI_Controller
 	}
 
 	/**
-	 * Change password
+	 * Change password 
 	 */
 	public function change_password()
 	{

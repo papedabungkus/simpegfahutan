@@ -161,18 +161,27 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Ubah Password</h5>
       </div>
       <div class="modal-body">
-        <form  action="<?php echo base_url('auth/login'); ?>" method="POST" id="loginForm" class="form-signin" autocomplete="off">
-                
+        <form  action="<?php echo base_url('auth/change_password'); ?>" method="POST" id="loginForm" class="form-signin" autocomplete="off">
                 <div class="input-prepend">
-                <label>Password</label>
+                <label>Kata Sandi Lama</label>
                     <span class="add-on"><i class="icon-key"></i></span>
-                    <input type='password' class='span4' id='password' name='password'/>
-                 </div>         
-                            
+                    <input class='span5' type="password" name="old" value="" id="old" placeholder="Ketikkan kata sandi lama"/>
+                 </div>          
+                <div class="input-prepend">
+                <label>Kata Sandi Baru</label>
+                    <span class="add-on"><i class="icon-key"></i></span>
+                    <input class='span5' type="password" name="new" value="" id="new" placeholder="Ketikkan kata sandi baru"/>
+                 </div>  
+                 <div class="input-prepend">
+                <label>Konfirmasi Kata Sandi</label>
+                    <span class="add-on"><i class="icon-key"></i></span>
+                    <input class='span5' type="password" name="new_confirm" value="" id="new_confirm" placeholder="Ketikkan kembali kata sandi"/>
+                 </div>        
+                 <input type="hidden" name="user_id" value="<?php echo $this->ion_auth->user()->row()->id; ?>" id="user_id"  /> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <input type="submit" name="submit" value="Simpan" class="btn btn-primary"  />
         </form>
       </div>
     </div>
