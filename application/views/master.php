@@ -43,7 +43,7 @@
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
-                                        <a onclick="confirm('Are You Sure?')" href="<?php echo base_url('master/delete/').$r_dosen['id'];?>" class="btn btn-small btn-danger">
+                                        <a data-id="<?php echo $r_dosen['id'];?>" href="" class="hapus btn btn-small btn-danger">
                                             <i class="btn-icon-only icon-remove"> </i>
                                         </a>
                                     </td>
@@ -122,19 +122,61 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Detail</h5>
       </div>
       <div class="modal-body">
-        <form  action="<?php echo base_url('auth/login'); ?>" method="POST" id="loginForm" class="form-signin" autocomplete="off">
-                
-                <div class="input-prepend">
-                <label>Password</label>
-                    <span class="add-on"><i class="icon-key"></i></span>
-                    <input type='password' class='span4' id='password' name='password'/>
-                 </div>         
-                            
+        <table border="0">
+            <tr>
+                <td>Nama</td><td>: <?php echo $this->input->post('nama'); ?></td>
+            </tr>
+            <tr>
+                <td>Tempat Tgl. Lahir</td><td> : <?php echo $this->input->post('ttl'); ?></td>
+            </tr>
+            <tr>
+                <td>NIP</td><td> : <?php echo $this->input->post('nip'); ?></td>
+            </tr>
+            <tr>
+                <td>NIDN</td><td> : <?php echo $this->input->post('nidn'); ?></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td><td> : <?php echo $this->input->post('jk'); ?></td>
+            </tr>
+            <tr>
+                <td>Golongan</td><td> : <?php echo $this->input->post('golongan'); ?></td>
+            </tr>
+            <tr>
+                <td>Gol TMT</td><td> : <?php echo $this->input->post('gol_tmt'); ?></td>
+            </tr>
+            <tr>
+                <td>Jabatan</td><td> : <?php echo $this->input->post('jabatan'); ?></td>
+            </tr>
+            <tr>
+                <td>Jabatan TMT</td><td> : <?php echo $this->input->post('jabatan_tmt'); ?></td>
+            </tr>
+            <tr>
+                <td>Masa Kerja Tahun</td><td> : <?php echo $this->input->post('masa_kerja_tahun'); ?></td>
+            </tr>
+            <tr>
+                <td>Masa Kerja Bulan</td><td> : <?php echo $this->input->post('masa_kerja_bulan'); ?></td>
+            </tr>
+            <tr>
+                <td>Pendidikan</td><td> : <?php echo $this->input->post('pendidikan'); ?></td>
+            </tr>
+            <tr>
+                <td>Tahun Lulus</td><td> : <?php echo $this->input->post('tahun_lulus'); ?></td>
+            </tr>
+            <tr>
+                <td>Tingkat Ijazah</td><td> : <?php echo $this->input->post('tingkat_ijazah'); ?></td>
+            </tr>
+            <tr>
+                <td>Usia</td><td> : <?php echo $this->input->post('usia'); ?></td>
+            </tr>
+            <tr>
+                <td>Catatan Mutasi</td><td> : <?php echo $this->input->post('catatan_mutasi'); ?></td>
+            </tr>        
+        </table>                   
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
         <button type="submit" class="btn btn-primary">Simpan</button>
-        </form>
+        
       </div>
     </div>
   </div>
@@ -152,6 +194,7 @@
                 function(data){
                     alert(data);
                 });
+                location.reload();
                 hapus = false;
             }
         } else {

@@ -170,12 +170,12 @@
                 <div class="input-prepend">
                 <label>Kata Sandi Baru</label>
                     <span class="add-on"><i class="icon-key"></i></span>
-                    <input class='span5' type="password" name="new" value="" id="new" placeholder="Ketikkan kata sandi baru"/>
+                    <input class='span5' type="password" name="new" value="" id="new" placeholder="Ketikkan kata sandi baru" pattern="^.{4}.*$" />
                  </div>  
                  <div class="input-prepend">
                 <label>Konfirmasi Kata Sandi</label>
                     <span class="add-on"><i class="icon-key"></i></span>
-                    <input class='span5' type="password" name="new_confirm" value="" id="new_confirm" placeholder="Ketikkan kembali kata sandi"/>
+                    <input class='span5' type="password" name="new_confirm" value="" id="new_confirm" placeholder="Ketikkan kembali kata sandi" pattern="^.{4}.*$" />
                  </div>        
                  <input type="hidden" name="user_id" value="<?php echo $this->ion_auth->user()->row()->id; ?>" id="user_id"  /> 
       </div>
