@@ -12,7 +12,7 @@ class Informasi extends CI_Controller{
 
     function index()
     {
-        $gol_dosen = $this->db->query("SELECT DISTINCT golongan FROM dospeg WHERE jenis_pd='dosen'")->result_array();
+        $gol_dosen = $this->db->query("SELECT DISTINCT golongan FROM dospeg WHERE jenis_pd='dosen' ORDER BY golongan DESC")->result_array();
         $gol_pegawai = $this->db->query("SELECT DISTINCT golongan FROM dospeg WHERE jenis_pd='pegawai' ORDER BY golongan DESC")->result_array();
         $peraturan = $this->db->query("SELECT * FROM pengumuman WHERE kategori='peraturan' ORDER BY datetime DESC")->result_array();
         $data['peraturan'] = $peraturan;
