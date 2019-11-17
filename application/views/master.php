@@ -40,7 +40,7 @@
                                         <a href="" class="btn btn-small btn-default detail_button" data-id="<?php echo $r_dosen['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg">
                                             <i class="btn-icon-only icon-search"> </i>
                                         </a>
-                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-toggle="modal" data-target="#modalEditDospeg<?php echo $r_dosen['id']; ?>">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-toggle="modal" data-target="#modalEditDospeg">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
                                         <a data-id="<?php echo $r_dosen['id'];?>" href="" class="hapus btn btn-small btn-danger">
@@ -48,64 +48,6 @@
                                         </a>
                                     </td>
                                 </tr>
-                                <!-- Modal Edit Mahasiswa-->
-                                <div class="modal fade" id="modalEditDospeg<?php echo $r_dosen['id']; ?>" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Update Data Dosen</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form role="form" action="<?php echo base_url('master/update');?>" method="get">
-                                            <?php
-                                            $id = $r_dosen['id']; 
-                                            $query_edit = $this->db->get_where('dospeg',array('id'=>$id))->row_array();
-                                            ?>
-                                            <label class="span2">Nama</label>
-                                            <input name="nama" type="text" class="span4" value="<?php echo $query_edit['nama']; ?>">
-                                            <label class="span2">Tempat Tgl. Lahir</label>
-                                            <input name="ttl" type="text" class="span4" value="<?php echo $query_edit['ttl']; ?>">
-                                            <label class="span2">NIP</label>
-                                            <input name="nip" type="text" class="span4" value="<?php echo $query_edit['nip']; ?>">
-                                            <label class="span2">NIDN</label>
-                                            <input name="nidn" type="text" class="span4" value="<?php echo $query_edit['nidn']; ?>">
-                                            <label class="span2">Jenis Kelamin</label>
-                                            <input name="jk" type="text" class="span4" value="<?php echo $query_edit['jk']; ?>">
-                                            <label class="span2">Golongan</label>
-                                            <input name="golongan" type="text" class="span4" value="<?php echo $query_edit['golongan']; ?>">
-                                            <label class="span2">Gol TMT</label>
-                                            <input id="datepicker" name="gol_tmt" type="text" class="span4" value="<?php echo $query_edit['gol_tmt']; ?>">
-                                            <label class="span2">Jabatan</label>
-                                            <input name="jabatan" type="text" class="span4" value="<?php echo $query_edit['jabatan']; ?>">
-                                            <label class="span2">Jabatan TMT</label>
-                                            <input name="jabatan_tmt" type="text" class="span4" value="<?php echo $query_edit['jabatan_tmt']; ?>">
-                                            <label class="span2">Masa Kerja Tahun</label>
-                                            <input name="masa_kerja_tahun" type="text" class="span4" value="<?php echo $query_edit['masa_kerja_tahun']; ?>">
-                                            <label class="span2">Masa Kerja Bulan</label>
-                                            <input name="masa_kerja_bulan" type="text" class="span4" value="<?php echo $query_edit['masa_kerja_bulan']; ?>">
-                                            <label class="span2">Pendidikan</label>
-                                            <input name="pendidikan" type="text" class="span4" value="<?php echo $query_edit['pendidikan']; ?>">
-                                            <label class="span2">Tahun Lulus</label>
-                                            <input name="tahun_lulus" type="text" class="span4" value="<?php echo $query_edit['tahun_lulus']; ?>">
-                                            <label class="span2">Tingkat Ijazah</label>
-                                            <input name="tingkat_ijazah" type="text" class="span4" value="<?php echo $query_edit['tingkat_ijazah']; ?>">
-                                            <label class="span2">Usia</label>
-                                            <input name="usia" type="text" class="span4" value="<?php echo $query_edit['usia']; ?>">
-                                            <label class="span2">Catatan Mutasi</label>
-                                            <input name="catatan_mutasi" type="text" class="span4" value="<?php echo $query_edit['catatan_mutasi']; ?>">
-                                            
-                                            <input type="hidden" name="id" value="<?php echo $query_edit['id']; ?>">         
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Simpan">
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
                             <?php } ?>
                             </tbody>
                         </table>
@@ -153,7 +95,7 @@
                                         <a href=""  class="btn btn-small btn-default detail_button" data-id="<?php echo $r_peg['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg">
                                             <i class="btn-icon-only icon-search"> </i>
                                         </a>
-                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="<?php echo $r_peg['id']; ?>" data-toggle="modal" data-target="#modalEditDospeg">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#modalEditDospeg">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
                                         <a data-id="<?php echo $r_peg['id'];?>" href="" class="hapus btn btn-small btn-danger">
@@ -191,6 +133,24 @@
   </div>
 </div>
 
+
+<div class="modal fade" id="modalEditDospeg" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Update Data Dosen</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Simpan">
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
 <script>
     $(".hapus").click(function() {
         var jawab = confirm("Apakah anda yakin akan menghapus ?");
@@ -225,6 +185,6 @@
 </script>
         <script>
         $(function() {
-            $('#datepicker').datepicker();
+            $('.datepicker').datepicker();
         });
         </script>
