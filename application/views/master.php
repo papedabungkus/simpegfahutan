@@ -37,10 +37,10 @@
                                     <td><?php echo $r_dosen['golongan']; ?></td>
                                     <td><?php echo $r_dosen['jabatan']; ?></td>
                                     <td width="10%" class="td-actions">
-                                        <a href="" id="ubahdata" class="btn btn-small btn-default detail_button" data-id="" data-toggle="modal" data-target="#modalDetailDospeg">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-default detail_button" data-id="<?php echo $r_dosen['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg">
                                             <i class="btn-icon-only icon-search"> </i>
                                         </a>
-                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="<?php echo $r_dosen['id']; ?>" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
                                         <a data-id="<?php echo $r_dosen['id'];?>" href="" class="hapus btn btn-small btn-danger">
@@ -92,10 +92,10 @@
                                     <td><?php echo $r_peg['golongan']; ?></td>
                                     <td><?php echo $r_peg['jabatan']; ?></td>
                                     <td width="10%" class="td-actions">
-                                        <a href="" id="ubahdata" class="btn btn-small btn-default detail_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-default detail_button" data-id="<?php echo $r_peg['id']; ?>" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-search"> </i>
                                         </a>
-                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="<?php echo $r_peg['id']; ?>" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
                                         <a data-id="<?php echo $r_peg['id'];?>" href="" class="hapus btn btn-small btn-danger">
@@ -122,56 +122,9 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Detail</h5>
       </div>
       <div class="modal-body">
-        <table  class="table table-bordered">
-            <tr>
-                <td>Nama</td><td>: <?php echo $this->input->post('nama'); ?></td>
-            </tr>
-            <tr>
-                <td>Tempat Tgl. Lahir</td><td> : <?php echo $this->input->post('ttl'); ?></td>
-            </tr>
-            <tr>
-                <td>NIP</td><td> : <?php echo $this->input->post('nip'); ?></td>
-            </tr>
-            <tr>
-                <td>NIDN</td><td> : <?php echo $this->input->post('nidn'); ?></td>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin</td><td> : <?php echo $this->input->post('jk'); ?></td>
-            </tr>
-            <tr>
-                <td>Golongan</td><td> : <?php echo $this->input->post('golongan'); ?></td>
-            </tr>
-            <tr>
-                <td>Gol TMT</td><td> : <?php echo $this->input->post('gol_tmt'); ?></td>
-            </tr>
-            <tr>
-                <td>Jabatan</td><td> : <?php echo $this->input->post('jabatan'); ?></td>
-            </tr>
-            <tr>
-                <td>Jabatan TMT</td><td> : <?php echo $this->input->post('jabatan_tmt'); ?></td>
-            </tr>
-            <tr>
-                <td>Masa Kerja Tahun</td><td> : <?php echo $this->input->post('masa_kerja_tahun'); ?></td>
-            </tr>
-            <tr>
-                <td>Masa Kerja Bulan</td><td> : <?php echo $this->input->post('masa_kerja_bulan'); ?></td>
-            </tr>
-            <tr>
-                <td>Pendidikan</td><td> : <?php echo $this->input->post('pendidikan'); ?></td>
-            </tr>
-            <tr>
-                <td>Tahun Lulus</td><td> : <?php echo $this->input->post('tahun_lulus'); ?></td>
-            </tr>
-            <tr>
-                <td>Tingkat Ijazah</td><td> : <?php echo $this->input->post('tingkat_ijazah'); ?></td>
-            </tr>
-            <tr>
-                <td>Usia</td><td> : <?php echo $this->input->post('usia'); ?></td>
-            </tr>
-            <tr>
-                <td>Catatan Mutasi</td><td> : <?php echo $this->input->post('catatan_mutasi'); ?></td>
-            </tr>        
-        </table>                   
+      <div id="result">
+        <?php echo $nama; ?>
+      </div>                 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
@@ -200,4 +153,17 @@
             return false;
         }
     })
+</script>
+<script>
+    $(document).on("click", ".detail_button", function () {
+    var myId = $(this).data('id'); 
+    $.ajax({
+    type: 'POST',
+    url: '<?php echo base_url();?>master/detail',
+    data: { ids: myId },
+    success: function(response) { 
+    $('#result').html(response);
+    }
+    });
+    });
 </script>

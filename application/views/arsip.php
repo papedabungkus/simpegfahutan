@@ -74,7 +74,7 @@
                                     <td><?php echo $a['jenis_file']; ?></td>
                                     <td><?php echo $a['terakhir_diubah']; ?></td>
                                     <td class="td-actions">                                     
-                                        <?php if($this->ion_auth->is_admin()){
+                                        <?php if($this->ion_auth->is_admin()){ 
                                             if($a['url']==""){ ?>
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-id="<?php echo $a['id']; ?>" data-toggle="modal" data-target="#exampleModalCenter">
                                             <i class="btn-icon-only icon-upload"> Unggah</i>
