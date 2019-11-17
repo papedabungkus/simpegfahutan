@@ -142,13 +142,7 @@
         <script src="<?php echo base_url('assets/template/js/jquery/jquery-tablesorter.js');?>" type="text/javascript" ></script>
         <script src="<?php echo base_url('assets/template/js/jquery/jquery-chosen.js');?>" type="text/javascript" ></script>
         <script src="<?php echo base_url('assets/template/js/jquery/virtual-tour.js');?>" type="text/javascript" ></script>
-        <script type="text/javascript">
-            $(function() {
-                $('#sample-table').tablesorter();
-                $('#datepicker').datepicker();
-                $(".chosen").chosen();
-            });
-        </script>
+        
 
 
 

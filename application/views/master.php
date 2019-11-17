@@ -122,7 +122,7 @@
         <h5 class="modal-title" id="exampleModalLongTitle">Detail</h5>
       </div>
       <div class="modal-body">
-        <table border="0">
+        <table  class="table table-bordered">
             <tr>
                 <td>Nama</td><td>: <?php echo $this->input->post('nama'); ?></td>
             </tr>
@@ -182,7 +182,6 @@
   </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
     $(".hapus").click(function() {
         var jawab = confirm("Apakah anda yakin akan menghapus ?");

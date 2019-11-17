@@ -61,7 +61,7 @@ class Pengumuman extends CI_Controller{
     {
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
         if ($id <> '') {
-            $pengumuman = $this->Pengumuman_model->get_pengumuman($id);
+            $this->db->delete('pengumuman',array('id'=>$id));
             echo 'data dengan id = '.$id.' berhasil dihapus';
         }
         
