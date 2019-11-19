@@ -87,7 +87,7 @@
                                 if ($this->ion_auth->user()->row()->id == '1') {
                             ?>
                                 <li>
-                                    <a href="<?php echo base_url('master');?>">
+                                    <a href="<?php echo base_url('dospeg');?>">
                                         <i class="icon-book icon-large"></i> Master Data
                                     </a>
                                 </li>
