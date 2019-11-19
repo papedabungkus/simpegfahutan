@@ -23,7 +23,7 @@
 								<th>Jenis Kelamin</th>
 								<th>Golongan</th>
 								<th>Jabatan</th>
-								<th width="100">Aksi</th>
+								<th width="150">Aksi</th>
 							</tr>
 							<?php $no=1; 
 							foreach($dosen as $d){ ?>
@@ -37,6 +37,7 @@
 								<td><?php echo $d['golongan']; ?></td>
 								<td><?php echo $d['jabatan']; ?></td>
 								<td>
+									<a onclick="javascript: return confirm('Anda yakin akan melakukan reset password?')" class="btn btn-small btn-primary" href="<?php echo site_url('dospeg/reset_password/'.$d['userid']); ?>" ><i class="btn-icon-only icon-key"> </i></a>
 									<a class="btn btn-small btn-default detail_button" href=""data-id="<?php echo $d['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg"><i class="btn-icon-only icon-search"> </i></a>
 									<a class="btn btn-small btn-info" href="<?php echo site_url('dospeg/edit/'.$d['id']); ?>"><i class="btn-icon-only icon-pencil"> </i></a>
 									<a onclick="javascript: return confirm('Anda yakin hapus ?')" class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
@@ -72,7 +73,7 @@
 								<th>Jenis Kelamin</th>
 								<th>Golongan</th>
 								<th>Jabatan</th>
-								<th width="100">Aksi</th>
+								<th width="150">Aksi</th>
 							</tr>
 							<?php $no=1; 
 							foreach($pegawai as $d1){ ?>
@@ -85,6 +86,7 @@
 								<td><?php echo $d1['golongan']; ?></td>
 								<td><?php echo $d1['jabatan']; ?></td>
 								<td>
+									<a onclick="javascript: return confirm('Anda yakin akan melakukan reset password?')" class="btn btn-small btn-primary" href="<?php echo site_url('dospeg/reset_password/'.$d1['userid']); ?>" ><i class="btn-icon-only icon-key"> </i></a>
 									<a class="btn btn-small btn-default detail_button" href=""data-id="<?php echo $d1['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg"><i class="btn-icon-only icon-search"> </i></a>
 									<a class="btn btn-small btn-info" href="<?php echo site_url('dospeg/edit/'.$d1['id']); ?>"><i class="btn-icon-only icon-pencil"> </i></a>
 									<a  onclick="javascript: return confirm('Anda yakin hapus ?')" class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d1['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>

@@ -144,4 +144,10 @@ class Dospeg extends CI_Controller{
             show_error('The dospeg you are trying to delete does not exist.');
     }
     
+    function reset_password($userid)
+    {
+        $data['password'] = 'unipa';
+        $this->ion_auth->update($userid, $data);
+        redirect('dospeg/index');
+    }
 }
