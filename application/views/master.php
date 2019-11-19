@@ -32,7 +32,7 @@
                                     <td><?php echo $r_dosen['nama']; ?></td>
                                     <td><?php echo $r_dosen['nip']; ?></td>
                                     <td><?php echo $r_dosen['nidn']; ?></td>
-                                    <td><?php echo $r_dosen['ttl']; ?></td>
+                                    <td><?php echo $r_dosen['tempat_lahir'].", ".tgl_indo($r_dosen['tgl_lahir']); ?></td>
                                     <td><?php echo $r_dosen['jk']; ?></td>
                                     <td><?php echo $r_dosen['golongan']; ?></td>
                                     <td><?php echo $r_dosen['jabatan']; ?></td>
@@ -40,6 +40,7 @@
                                         <a href="" class="btn btn-small btn-default detail_button" data-id="<?php echo $r_dosen['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg">
                                             <i class="btn-icon-only icon-search"> </i>
                                         </a>
+                                        
                                         <a href="" id="ubahdata" class="btn btn-small btn-success edit_button" data-toggle="modal" data-target="#modalEditDospeg">
                                             <i class="btn-icon-only icon-pencil"> </i>
                                         </a>
@@ -87,7 +88,7 @@
                                     <td><?php echo $no++; ?></td>
                                     <td><?php echo $r_peg['nama']; ?></td>
                                     <td><?php echo $r_peg['nip']; ?></td>
-                                    <td><?php echo $r_peg['ttl']; ?></td>
+                                    <td><?php echo $r_peg['tempat_lahir'].", ".tgl_indo($r_peg['tgl_lahir']); ?></td>
                                     <td><?php echo $r_peg['jk']; ?></td>
                                     <td><?php echo $r_peg['golongan']; ?></td>
                                     <td><?php echo $r_peg['jabatan']; ?></td>
@@ -134,23 +135,6 @@
 </div>
 
 
-<div class="modal fade" id="modalEditDospeg" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Update Data Dosen/Pegawai</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Simpan">
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
 <script>
     $(".hapus").click(function() {
         var jawab = confirm("Apakah anda yakin akan menghapus ?");
@@ -183,8 +167,9 @@
     });
     });
 </script>
-        <script>
-        $(function() {
-            $('.datepicker').datepicker();
-        });
-        </script>
+
+<script>
+    $(function() {
+        $('.datepicker').datepicker();
+    });
+</script>

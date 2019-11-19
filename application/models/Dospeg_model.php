@@ -4,7 +4,7 @@
  * www.crudigniter.com
  */
  
-class Master_model extends CI_Model
+class Dospeg_model extends CI_Model
 {
     function __construct()
     {
@@ -22,9 +22,17 @@ class Master_model extends CI_Model
     /*
      * Get all dospeg
      */
-    function get_all_dospeg()
+    function get_all_dosen()
     {
-        $this->db->order_by('id', 'desc');
+        $this->db->where('jenis_pd','dosen');
+        $this->db->order_by('golongan', 'desc');
+        return $this->db->get('dospeg')->result_array();
+    }
+
+    function get_all_pegawai()
+    {
+        $this->db->where('jenis_pd','pegawai');
+        $this->db->order_by('golongan', 'desc');
         return $this->db->get('dospeg')->result_array();
     }
         
@@ -52,11 +60,5 @@ class Master_model extends CI_Model
     function delete_dospeg($id)
     {
         return $this->db->delete('dospeg',array('id'=>$id));
-    }
-
-    function ubah($data, $id){
-        $this->db->where('id',$id);
-        $this->db->update('dospeg', $data);
-        return TRUE;
     }
 }
