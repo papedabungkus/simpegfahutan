@@ -60,7 +60,6 @@
 				</table>
 				</div>
 				<div class="span5"><br>
-				<?php echo form_open('dospeg/edit/'.$dospeg['id']); ?>
 				<table border=0>
 					<tr>
 						<td>Golongan</td> 
@@ -123,7 +122,6 @@
 
 				
 				<div class="span5"><br>
-				<?php echo form_open('dospeg/edit/'.$dospeg['id']); ?>
 				<table border=0>
 					<tr>
 						<td>Pendidikan</td> 

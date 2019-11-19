@@ -5,9 +5,12 @@
                     <div class="box-header">
                         <i class="icon-user"></i>
                         <h5>Master Data Dosen</h5>
-                        <button class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
-                            <i class="icon-reorder"></i>
-                        </button>
+                        <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
+                            <i class="icon-reorder"></i> Maximize/Minimize
+                        </a>
+                        <a href="" class="btn btn-box-right disabled">
+                            <i class="icon-plus"></i> Tambah Data
+                        </a>
                     </div>
                     <div class="box-content box-list1 collapse in">
                         <table class="table table-hover tablesorter">
@@ -52,9 +55,12 @@
                     <div class="box-header">
                         <i class="icon-user"></i>
                         <h5>Master Data Pegawai</h5>
-                        <button class="btn btn-box-right" data-toggle="collapse" data-target=".box-list2">
-                            <i class="icon-reorder"></i>
-                        </button>
+                        <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
+                            <i class="icon-reorder"></i> Maximize/Minimize
+                        </a>
+                        <a href="" class="btn btn-box-right disabled">
+                            <i class="icon-plus"></i> Tambah Data
+                        </a>
                     </div>
                     <div class="box-content box-list2 collapse in">
                         <table class="table table-hover tablesorter">
