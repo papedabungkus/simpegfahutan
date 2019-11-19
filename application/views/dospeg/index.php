@@ -34,6 +34,7 @@
 								<td><?php echo $d['golongan']; ?></td>
 								<td><?php echo $d['jabatan']; ?></td>
 								<td>
+									<a class="btn btn-small btn-default detail_button" href=""data-id="<?php echo $d['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg"><i class="btn-icon-only icon-search"> </i></a>
 									<a class="btn btn-small btn-info" href="<?php echo site_url('dospeg/edit/'.$d['id']); ?>"><i class="btn-icon-only icon-pencil"> </i></a>
 									<a class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
 								</td>
@@ -78,6 +79,7 @@
 								<td><?php echo $d1['golongan']; ?></td>
 								<td><?php echo $d1['jabatan']; ?></td>
 								<td>
+									<a class="btn btn-small btn-default detail_button" href=""data-id="<?php echo $d1['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg"><i class="btn-icon-only icon-search"> </i></a>
 									<a class="btn btn-small btn-info" href="<?php echo site_url('dospeg/edit/'.$d1['id']); ?>"><i class="btn-icon-only icon-pencil"> </i></a>
 									<a class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d1['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
 								</td>
@@ -89,3 +91,37 @@
             </div>
 		</div>
 	</section>
+
+	
+ <!-- Modal -->
+ <div class="modal fade" id="modalDetailDospeg" tabindex="-1" role="dialog" aria-labelledby="modalDetailDospeg" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Detail</h5>
+      </div>
+      <div class="modal-body">
+      <div id="result">
+      </div>                 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).on("click", ".detail_button", function () {
+    	var myId = $(this).data('id'); 
+    	$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url();?>master/detail',
+			data: { ids: myId },
+			success: function(response) { 
+    			$('#result').html(response);
+    		}
+    	});
+    });
+</script>
