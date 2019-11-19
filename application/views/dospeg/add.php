@@ -34,7 +34,7 @@
 					</tr>
 					<tr>
 						<td>NIDN </td> 
-						<td><input type="text" name="nama" value="<?php echo $this->input->post('nama'); ?>" /></td>
+						<td><input type="text" name="nidn" value="<?php echo $this->input->post('nidn'); ?>" /></td>
 					</tr>
 					<tr>
 						<td>Jenis Kelamin </td> 
@@ -164,13 +164,16 @@
 							</select>
 						</td>
 					</tr>
+					<tr>
+						<td>Password Login</td> 
+						<td><input type="password" name="password" /></td>
+					</tr>
 				</table>
 			</div>
         </div>
 	</div>
 </section>
 <?php echo form_close(); ?>
-
 
 <script>
     $(function() {

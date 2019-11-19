@@ -8,7 +8,7 @@
                         <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
                             <i class="icon-reorder"></i> Maximize/Minimize
                         </a>
-                        <a href="" class="btn btn-box-right disabled">
+                        <a href="" class="btn btn-box-right">
                             <i class="icon-plus"></i> Tambah Data
                         </a>
                     </div>
@@ -58,7 +58,7 @@
                         <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
                             <i class="icon-reorder"></i> Maximize/Minimize
                         </a>
-                        <a href="" class="btn btn-box-right disabled">
+                        <a href="" class="btn btn-box-right">
                             <i class="icon-plus"></i> Tambah Data
                         </a>
                     </div>

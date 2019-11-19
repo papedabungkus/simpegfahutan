@@ -34,7 +34,7 @@
 					</tr>
 					<tr>
 						<td>NIDN </td> 
-						<td><input type="text" name="nama" value="<?php echo ($this->input->post('nama') ? $this->input->post('nama') : $dospeg['nama']); ?>" /></td>
+						<td><input type="text" name="nidn" value="<?php echo ($this->input->post('nidn') ? $this->input->post('nidn') : $dospeg['nidn']); ?>" /></td>
 					</tr>
 					<tr>
 						<td>Jenis Kelamin </td> 

@@ -33,6 +33,17 @@ class Dospeg extends CI_Controller{
 		
 		if($this->form_validation->run())     
         {   
+            $identity = $this->input->post('nip');
+			$password = $this->input->post('password');
+
+			$additional_data = [
+				'company' => 'Fahutan-Unipa',
+			];
+            $this->ion_auth->register($identity, $password, $identity, $additional_data);
+            
+            $q_users = $this->db->query("SELECT MAX(id) AS idterakhir FROM users")->row();
+            $userid = $q_users['id'];            
+			
             $params = array(
 				'jk' => $this->input->post('jk'),
 				'golongan' => $this->input->post('golongan'),
@@ -51,7 +62,7 @@ class Dospeg extends CI_Controller{
 				'tahun_lulus' => $this->input->post('tahun_lulus'),
 				'tingkat_ijazah' => $this->input->post('tingkat_ijazah'),
 				'usia' => $this->input->post('usia'),
-				'userid' => $this->input->post('userid'),
+				'userid' => $userid,
 				'catatan_mutasi' => $this->input->post('catatan_mutasi'),
             );
             
