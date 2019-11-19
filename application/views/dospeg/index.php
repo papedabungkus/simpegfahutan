@@ -56,7 +56,7 @@
                     <div class="box-header">
                         <i class="icon-user"></i>
                         <h5>Master Data Pegawai</h5>
-                        <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
+                        <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list2">
                             <i class="icon-reorder"></i> Maximize/Minimize
                         </a>
                         <a href="<?php echo site_url('dospeg/add');?>" class="btn btn-box-right">
