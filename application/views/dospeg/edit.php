@@ -30,11 +30,11 @@
 					</tr>
 					<tr>
 						<td>NIP </td> 
-						<td><input type="text" name="nip" value="<?php echo ($this->input->post('nip') ? $this->input->post('nip') : $dospeg['nip']); ?>" /></td>
+						<td><input type="number" name="nip" value="<?php echo ($this->input->post('nip') ? $this->input->post('nip') : $dospeg['nip']); ?>" /></td>
 					</tr>
 					<tr>
 						<td>NIDN </td> 
-						<td><input type="text" name="nidn" value="<?php echo ($this->input->post('nidn') ? $this->input->post('nidn') : $dospeg['nidn']); ?>" /></td>
+						<td><input type="number" name="nidn" value="<?php echo ($this->input->post('nidn') ? $this->input->post('nidn') : $dospeg['nidn']); ?>" /></td>
 					</tr>
 					<tr>
 						<td>Jenis Kelamin </td> 
@@ -99,7 +99,7 @@
 					</tr>
 					<tr>
 						<td>Golongan TMT</td> 
-						<td><input class="datepicker" type="text" name="gol_tmt" value="<?php echo ($this->input->post('gol_tmt') ? $this->input->post('gol_tmt') : $dospeg['gol_tmt']); ?>" /></td>
+						<td><input data-date-format="yyyy-mm-dd" class="datepicker" type="text" name="gol_tmt" value="<?php echo ($this->input->post('gol_tmt') ? $this->input->post('gol_tmt') : $dospeg['gol_tmt']); ?>" /></td>
 					</tr>
 					<tr>
 						<td>Jabatan</td> 
@@ -107,7 +107,7 @@
 					</tr>
 					<tr>
 						<td>Jabatan TMT</td> 
-						<td><input type="number" name="jabatan_tmt" value="<?php echo ($this->input->post('jabatan_tmt') ? $this->input->post('jabatan_tmt') : $dospeg['jabatan_tmt']); ?>" /></td>
+						<td><input data-date-format="yyyy-mm-dd" class="datepicker"  type="text" name="jabatan_tmt" value="<?php echo ($this->input->post('jabatan_tmt') ? $this->input->post('jabatan_tmt') : $dospeg['jabatan_tmt']); ?>" /></td>
 					</tr>
 					<tr>
 						<td>Masa Kerja Tahun</td> 

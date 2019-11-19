@@ -42,7 +42,7 @@ class Dospeg extends CI_Controller{
             $this->ion_auth->register($identity, $password, $identity, $additional_data);
             
             $q_users = $this->db->query("SELECT MAX(id) AS idterakhir FROM users")->row();
-            $userid = $q_users['id'];            
+            $userid = $q_users->idterakhir;            
 			
             $params = array(
 				'jk' => $this->input->post('jk'),

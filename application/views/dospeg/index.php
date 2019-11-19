@@ -8,7 +8,7 @@
                         <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
                             <i class="icon-reorder"></i> Maximize/Minimize
                         </a>
-                        <a href="" class="btn btn-box-right">
+                        <a href="<?php echo site_url('dospeg/add');?>" class="btn btn-box-right">
                             <i class="icon-plus"></i> Tambah Data
                         </a>
                     </div>
@@ -39,7 +39,7 @@
 								<td>
 									<a class="btn btn-small btn-default detail_button" href=""data-id="<?php echo $d['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg"><i class="btn-icon-only icon-search"> </i></a>
 									<a class="btn btn-small btn-info" href="<?php echo site_url('dospeg/edit/'.$d['id']); ?>"><i class="btn-icon-only icon-pencil"> </i></a>
-									<a class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
+									<a onclick="javascript: return confirm('Anda yakin hapus ?')" class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
 								</td>
 							</tr>
 							<?php } ?>
@@ -58,7 +58,7 @@
                         <a class="btn btn-box-right" data-toggle="collapse" data-target=".box-list1">
                             <i class="icon-reorder"></i> Maximize/Minimize
                         </a>
-                        <a href="" class="btn btn-box-right">
+                        <a href="<?php echo site_url('dospeg/add');?>" class="btn btn-box-right">
                             <i class="icon-plus"></i> Tambah Data
                         </a>
                     </div>
@@ -87,7 +87,7 @@
 								<td>
 									<a class="btn btn-small btn-default detail_button" href=""data-id="<?php echo $d1['id']; ?>" data-toggle="modal" data-target="#modalDetailDospeg"><i class="btn-icon-only icon-search"> </i></a>
 									<a class="btn btn-small btn-info" href="<?php echo site_url('dospeg/edit/'.$d1['id']); ?>"><i class="btn-icon-only icon-pencil"> </i></a>
-									<a class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d1['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
+									<a  onclick="javascript: return confirm('Anda yakin hapus ?')" class="btn btn-small btn-danger" href="<?php echo site_url('dospeg/remove/'.$d1['id']); ?>"><i class="btn-icon-only icon-remove"> </i></a>
 								</td>
 							</tr>
 							<?php } ?>
