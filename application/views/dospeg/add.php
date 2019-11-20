@@ -166,7 +166,8 @@
 					</tr>
 					<tr>
 						<td>Password Login</td> 
-						<td><input type="password" name="password" /></td>
+						<td><input type="password" name="password" />
+						<span class="text-danger"><?php echo form_error('password');?></span></td>
 					</tr>
 				</table>
 			</div>

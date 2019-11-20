@@ -29,8 +29,12 @@ class Dospeg extends CI_Controller{
     {   
         $this->load->library('form_validation');
 
-		$this->form_validation->set_rules('nip','Nip','numeric');
-		
+		$this->form_validation->set_rules('nip','NIP','required');
+        $this->form_validation->set_rules('nama','Nama','required');
+        $this->form_validation->set_rules('jk','Jenis Kelamin','required');
+        $this->form_validation->set_rules('jenis_pd','Jenis User','required');
+        $this->form_validation->set_rules('password','Password','required');
+        
 		if($this->form_validation->run())     
         {   
             $identity = $this->input->post('nip');
@@ -88,7 +92,11 @@ class Dospeg extends CI_Controller{
         {
             $this->load->library('form_validation');
 
-			$this->form_validation->set_rules('nip','Nip','numeric');
+			$this->form_validation->set_rules('nip','NIP','required');
+            $this->form_validation->set_rules('nama','Nama','required');
+            $this->form_validation->set_rules('jk','Jenis Kelamin','required');
+            $this->form_validation->set_rules('jenis_pd','Jenis User','required');
+            $this->form_validation->set_rules('password','Password','required');
 		
 			if($this->form_validation->run())     
             {   
@@ -110,7 +118,6 @@ class Dospeg extends CI_Controller{
 					'tahun_lulus' => $this->input->post('tahun_lulus'),
 					'tingkat_ijazah' => $this->input->post('tingkat_ijazah'),
 					'usia' => $this->input->post('usia'),
-					'userid' => $this->input->post('userid'),
 					'catatan_mutasi' => $this->input->post('catatan_mutasi'),
                 );
 
