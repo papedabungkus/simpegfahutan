@@ -96,7 +96,6 @@ class Dospeg extends CI_Controller{
             $this->form_validation->set_rules('nama','Nama','required');
             $this->form_validation->set_rules('jk','Jenis Kelamin','required');
             $this->form_validation->set_rules('jenis_pd','Jenis User','required');
-            $this->form_validation->set_rules('password','Password','required');
 		
 			if($this->form_validation->run())     
             {   
