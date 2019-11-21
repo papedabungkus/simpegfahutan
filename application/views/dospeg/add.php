@@ -30,7 +30,7 @@
 					</tr>
 					<tr>
 						<td>NIP </td> 
-						<td><input type="text" maxlength="16" name="nip"  value="<?php echo $this->input->post('nip'); ?>" /></td>
+						<td><input type="text" maxlength="18" name="nip"  value="<?php echo $this->input->post('nip'); ?>" /></td>
 					</tr>
 					<tr>
 						<td>NIDN </td> 

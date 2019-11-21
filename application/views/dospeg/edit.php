@@ -30,7 +30,7 @@
 					</tr>
 					<tr>
 						<td>NIP </td> 
-						<td><input type="text" maxlength="16" name="nip" maxlength="16" value="<?php echo ($this->input->post('nip') ? $this->input->post('nip') : $dospeg['nip']); ?>" /></td>
+						<td><input type="text" maxlength="18" name="nip" maxlength="16" value="<?php echo ($this->input->post('nip') ? $this->input->post('nip') : $dospeg['nip']); ?>" /></td>
 					</tr>
 					<tr>
 						<td>NIDN </td> 

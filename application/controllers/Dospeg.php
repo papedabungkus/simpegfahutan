@@ -30,11 +30,11 @@ class Dospeg extends CI_Controller{
         $this->load->library('form_validation');
 
 		$this->form_validation->set_rules('nip','NIP','required|numeric');
-        $this->form_validation->set_rules('nama','Nama','required');
+ /*       $this->form_validation->set_rules('nama','Nama','required');
         $this->form_validation->set_rules('jk','Jenis Kelamin','required');
         $this->form_validation->set_rules('jenis_pd','Jenis User','required');
         $this->form_validation->set_rules('password','Password','required');
-        
+        */
 		if($this->form_validation->run())     
         {   
             $identity = $this->input->post('nip');

@@ -15,18 +15,12 @@ class Master extends CI_Controller
 
     public function index()
     {
-        $data['_view'] = 'master/dospeg_list';
-        $this->load->view('layouts/main',$data);
+        $this->load->view('master/dospeg_list');
     } 
     
-    public function jsondosen() {
+    public function json() {
         header('Content-Type: application/json');
-        echo $this->Master_model->jsondosen();
-	}
-	
-	public function jsonpegawai() {
-        header('Content-Type: application/json');
-        echo $this->Master_model->jsonpegawai();
+        echo $this->Master_model->json();
     }
 
     public function read($id) 
@@ -65,31 +59,30 @@ class Master extends CI_Controller
     public function create() 
     {
         $data = array(
-            'button' => 'Tambah',
+            'button' => 'Create',
             'action' => site_url('master/create_action'),
-			'id' => set_value('id'),
-			'nama' => set_value('nama'),
-			'tempat_lahir' => set_value('tempat_lahir'),
-			'tgl_lahir' => set_value('tgl_lahir'),
-			'nip' => set_value('nip'),
-			'nidn' => set_value('nidn'),
-			'jk' => set_value('jk'),
-			'golongan' => set_value('golongan'),
-			'gol_tmt' => set_value('gol_tmt'),
-			'jabatan' => set_value('jabatan'),
-			'jabatan_tmt' => set_value('jabatan_tmt'),
-			'masa_kerja_tahun' => set_value('masa_kerja_tahun'),
-			'masa_kerja_bulan' => set_value('masa_kerja_bulan'),
-			'pendidikan' => set_value('pendidikan'),
-			'tahun_lulus' => set_value('tahun_lulus'),
-			'tingkat_ijazah' => set_value('tingkat_ijazah'),
-			'usia' => set_value('usia'),
-			'catatan_mutasi' => set_value('catatan_mutasi'),
-			'jenis_pd' => set_value('jenis_pd'),
-			'userid' => set_value('userid'),
-		);
-		$data['_view'] = 'master/dospeg_form';
-		$this->load->view('layouts/main',$data);
+	    'id' => set_value('id'),
+	    'nama' => set_value('nama'),
+	    'tempat_lahir' => set_value('tempat_lahir'),
+	    'tgl_lahir' => set_value('tgl_lahir'),
+	    'nip' => set_value('nip'),
+	    'nidn' => set_value('nidn'),
+	    'jk' => set_value('jk'),
+	    'golongan' => set_value('golongan'),
+	    'gol_tmt' => set_value('gol_tmt'),
+	    'jabatan' => set_value('jabatan'),
+	    'jabatan_tmt' => set_value('jabatan_tmt'),
+	    'masa_kerja_tahun' => set_value('masa_kerja_tahun'),
+	    'masa_kerja_bulan' => set_value('masa_kerja_bulan'),
+	    'pendidikan' => set_value('pendidikan'),
+	    'tahun_lulus' => set_value('tahun_lulus'),
+	    'tingkat_ijazah' => set_value('tingkat_ijazah'),
+	    'usia' => set_value('usia'),
+	    'catatan_mutasi' => set_value('catatan_mutasi'),
+	    'jenis_pd' => set_value('jenis_pd'),
+	    'userid' => set_value('userid'),
+	);
+        $this->load->view('master/dospeg_form', $data);
     }
     
     public function create_action() 
@@ -135,28 +128,28 @@ class Master extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('master/update_action'),
-				'id' => set_value('id', $row->id),
-				'nama' => set_value('nama', $row->nama),
-				'tempat_lahir' => set_value('tempat_lahir', $row->tempat_lahir),
-				'tgl_lahir' => set_value('tgl_lahir', $row->tgl_lahir),
-				'nip' => set_value('nip', $row->nip),
-				'nidn' => set_value('nidn', $row->nidn),
-				'jk' => set_value('jk', $row->jk),
-				'golongan' => set_value('golongan', $row->golongan),
-				'gol_tmt' => set_value('gol_tmt', $row->gol_tmt),
-				'jabatan' => set_value('jabatan', $row->jabatan),
-				'jabatan_tmt' => set_value('jabatan_tmt', $row->jabatan_tmt),
-				'masa_kerja_tahun' => set_value('masa_kerja_tahun', $row->masa_kerja_tahun),
-				'masa_kerja_bulan' => set_value('masa_kerja_bulan', $row->masa_kerja_bulan),
-				'pendidikan' => set_value('pendidikan', $row->pendidikan),
-				'tahun_lulus' => set_value('tahun_lulus', $row->tahun_lulus),
-				'tingkat_ijazah' => set_value('tingkat_ijazah', $row->tingkat_ijazah),
-				'usia' => set_value('usia', $row->usia),
-				'catatan_mutasi' => set_value('catatan_mutasi', $row->catatan_mutasi),
-				'jenis_pd' => set_value('jenis_pd', $row->jenis_pd),
-			);
-			$data['_view'] = 'master/dospeg_form';
-			$this->load->view('layouts/main',$data);
+		'id' => set_value('id', $row->id),
+		'nama' => set_value('nama', $row->nama),
+		'tempat_lahir' => set_value('tempat_lahir', $row->tempat_lahir),
+		'tgl_lahir' => set_value('tgl_lahir', $row->tgl_lahir),
+		'nip' => set_value('nip', $row->nip),
+		'nidn' => set_value('nidn', $row->nidn),
+		'jk' => set_value('jk', $row->jk),
+		'golongan' => set_value('golongan', $row->golongan),
+		'gol_tmt' => set_value('gol_tmt', $row->gol_tmt),
+		'jabatan' => set_value('jabatan', $row->jabatan),
+		'jabatan_tmt' => set_value('jabatan_tmt', $row->jabatan_tmt),
+		'masa_kerja_tahun' => set_value('masa_kerja_tahun', $row->masa_kerja_tahun),
+		'masa_kerja_bulan' => set_value('masa_kerja_bulan', $row->masa_kerja_bulan),
+		'pendidikan' => set_value('pendidikan', $row->pendidikan),
+		'tahun_lulus' => set_value('tahun_lulus', $row->tahun_lulus),
+		'tingkat_ijazah' => set_value('tingkat_ijazah', $row->tingkat_ijazah),
+		'usia' => set_value('usia', $row->usia),
+		'catatan_mutasi' => set_value('catatan_mutasi', $row->catatan_mutasi),
+		'jenis_pd' => set_value('jenis_pd', $row->jenis_pd),
+		'userid' => set_value('userid', $row->userid),
+	    );
+            $this->load->view('master/dospeg_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('master'));
@@ -189,6 +182,7 @@ class Master extends CI_Controller
 		'usia' => $this->input->post('usia',TRUE),
 		'catatan_mutasi' => $this->input->post('catatan_mutasi',TRUE),
 		'jenis_pd' => $this->input->post('jenis_pd',TRUE),
+		'userid' => $this->input->post('userid',TRUE),
 	    );
 
             $this->Master_model->update($this->input->post('id', TRUE), $data);
@@ -209,9 +203,7 @@ class Master extends CI_Controller
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('master'));
         }
-	}
-	
-
+    }
 
     public function _rules() 
     {
@@ -233,6 +225,7 @@ class Master extends CI_Controller
 	$this->form_validation->set_rules('usia', 'usia', 'trim|required');
 	$this->form_validation->set_rules('catatan_mutasi', 'catatan mutasi', 'trim|required');
 	$this->form_validation->set_rules('jenis_pd', 'jenis pd', 'trim|required');
+	$this->form_validation->set_rules('userid', 'userid', 'trim|required');
 
 	$this->form_validation->set_rules('id', 'id', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
@@ -243,5 +236,5 @@ class Master extends CI_Controller
 /* End of file Master.php */
 /* Location: ./application/controllers/Master.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2019-11-20 12:52:56 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2019-11-20 12:52:39 */
 /* http://harviacode.com */
