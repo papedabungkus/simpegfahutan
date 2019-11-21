@@ -25,11 +25,11 @@
                     </div>
                     <div class="form-group">
                         <label for="varchar">NIP (Username untuk login)<?php echo form_error('nip') ?></label>
-                        <input type="text" maxlength="18" class="form-control span5" name="nip" id="nip" placeholder="NIP" value="<?php echo $nip; ?>" />
+                        <input type="text" pattern="[0-9]{18}" class="form-control span5" name="nip" id="nip" placeholder="NIP" value="<?php echo $nip; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="varchar">NIDN <?php echo form_error('nidn') ?></label>
-                        <input type="text" class="form-control span5" name="nidn" id="nidn" placeholder="NIDN" value="<?php echo $nidn; ?>" />
+                        <input type="text" pattern="[0-9]{6}" class="form-control span5" name="nidn" id="nidn" placeholder="NIDN" value="<?php echo $nidn; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="varchar">Jenis Kelamin / Usia <?php echo form_error('jk') ?></label>
