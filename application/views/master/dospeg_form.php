@@ -25,11 +25,11 @@
                     </div>
                     <div class="form-group">
                         <label for="varchar">NIP (Username untuk login)<?php echo form_error('nip') ?></label>
-                        <input type="text" pattern="[0-9]{18}" class="form-control span5" name="nip" id="nip" placeholder="NIP" value="<?php echo $nip; ?>" />
+                        <input type="text" pattern="\d*" class="form-control span5" name="nip" id="nip" placeholder="NIP" value="<?php echo $nip; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="varchar">NIDN <?php echo form_error('nidn') ?></label>
-                        <input type="text" pattern="[0-9]{10}" class="form-control span5" name="nidn" id="nidn" placeholder="NIDN" value="<?php echo $nidn; ?>" />
+                        <input type="text" pattern="\d*" class="form-control span5" name="nidn" id="nidn" placeholder="NIDN" value="<?php echo $nidn; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="varchar">Jenis Kelamin / Usia <?php echo form_error('jk') ?></label>
@@ -50,8 +50,10 @@
 								?>
 							</select>
                             <input type="number" class="form-control span2" name="usia" id="usia" placeholder="Usia" value="<?php echo $usia; ?>" />
-                    
-                        
+                    </div>
+                    <div class="form-group">
+                        <label for="nohp">No. HP <?php echo form_error('nohp') ?></label>
+                        <input type="text" pattern="\d*" class="form-control span5" name="nohp" id="nohp" placeholder="No. HP" value="<?php echo $nohp; ?>" />
                     </div>
                 </div>
 				<div class="span5"><br>
@@ -143,9 +145,19 @@
 								?>
 							</select>
                     </div>
+                    <div class="form-group">
+                        <label for="year">Email <?php echo form_error('email') ?></label>
+                        <input type="text" class="form-control span5" name="email" id="email" placeholder="Email" value="<?php echo $email; ?>" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="year">Password <?php echo form_error('password') ?></label>
+                        <input type="password" class="form-control span5" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>" />
+                    </div>
+                    
                 </div>
                 <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
-                
+                <input type="hidden" name="userid" value="<?php echo $userid; ?>" /> 
             </div>
         </div>
 	</div>

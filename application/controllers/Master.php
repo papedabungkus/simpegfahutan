@@ -87,6 +87,9 @@ class Master extends CI_Controller
 			'catatan_mutasi' => set_value('catatan_mutasi'),
 			'jenis_pd' => set_value('jenis_pd'),
 			'userid' => set_value('userid'),
+			'password' => set_value('password'),
+			'email' => set_value('email'),
+			'nohp' => set_value('nohp'),
 		);
 		$data['_view'] = 'master/dospeg_form';
 		$this->load->view('layouts/main',$data);
@@ -99,28 +102,43 @@ class Master extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
-            $data = array(
-		'nama' => $this->input->post('nama',TRUE),
-		'tempat_lahir' => $this->input->post('tempat_lahir',TRUE),
-		'tgl_lahir' => $this->input->post('tgl_lahir',TRUE),
-		'nip' => $this->input->post('nip',TRUE),
-		'nidn' => $this->input->post('nidn',TRUE),
-		'jk' => $this->input->post('jk',TRUE),
-		'golongan' => $this->input->post('golongan',TRUE),
-		'gol_tmt' => $this->input->post('gol_tmt',TRUE),
-		'jabatan' => $this->input->post('jabatan',TRUE),
-		'jabatan_tmt' => $this->input->post('jabatan_tmt',TRUE),
-		'masa_kerja_tahun' => $this->input->post('masa_kerja_tahun',TRUE),
-		'masa_kerja_bulan' => $this->input->post('masa_kerja_bulan',TRUE),
-		'pendidikan' => $this->input->post('pendidikan',TRUE),
-		'tahun_lulus' => $this->input->post('tahun_lulus',TRUE),
-		'tingkat_ijazah' => $this->input->post('tingkat_ijazah',TRUE),
-		'usia' => $this->input->post('usia',TRUE),
-		'catatan_mutasi' => $this->input->post('catatan_mutasi',TRUE),
-		'jenis_pd' => $this->input->post('jenis_pd',TRUE),
-		'userid' => $this->input->post('userid',TRUE),
-	    );
+			//insert users
+			$username = $this->input->post('nip',TRUE);
+			$password = $this->input->post('password',TRUE);
+			$email = $this->input->post('email',TRUE);
+			$additional_data = array(
+						'first_name' => $this->input->post('nama',TRUE),
+						'company' => "Fahutan-Unipa",
+						"phone" => $this->input->post('nohp',TRUE), 
+						);
+			$group = array('2'); 
 
+			$this->ion_auth->register($username, $password, $email, $additional_data, $group);
+			$q_users = $this->db->query("SELECT MAX(id) AS idterakhir FROM users")->row();
+			$userid = $q_users->idterakhir;     
+			
+            $data = array(
+				'nama' => $this->input->post('nama',TRUE),
+				'tempat_lahir' => $this->input->post('tempat_lahir',TRUE),
+				'tgl_lahir' => $this->input->post('tgl_lahir',TRUE),
+				'nip' => $this->input->post('nip',TRUE),
+				'nidn' => $this->input->post('nidn',TRUE),
+				'jk' => $this->input->post('jk',TRUE),
+				'golongan' => $this->input->post('golongan',TRUE),
+				'gol_tmt' => $this->input->post('gol_tmt',TRUE),
+				'jabatan' => $this->input->post('jabatan',TRUE),
+				'jabatan_tmt' => $this->input->post('jabatan_tmt',TRUE),
+				'masa_kerja_tahun' => $this->input->post('masa_kerja_tahun',TRUE),
+				'masa_kerja_bulan' => $this->input->post('masa_kerja_bulan',TRUE),
+				'pendidikan' => $this->input->post('pendidikan',TRUE),
+				'tahun_lulus' => $this->input->post('tahun_lulus',TRUE),
+				'tingkat_ijazah' => $this->input->post('tingkat_ijazah',TRUE),
+				'usia' => $this->input->post('usia',TRUE),
+				'catatan_mutasi' => $this->input->post('catatan_mutasi',TRUE),
+				'jenis_pd' => $this->input->post('jenis_pd',TRUE),
+				'userid' => $userid,
+	    	);
+			
             $this->Master_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
             redirect(site_url('master'));
@@ -130,6 +148,7 @@ class Master extends CI_Controller
     public function update($id) 
     {
         $row = $this->Master_model->get_by_id($id);
+        $user = $this->Master_model->get_user($row->userid);
 
         if ($row) {
             $data = array(
@@ -154,6 +173,10 @@ class Master extends CI_Controller
 				'usia' => set_value('usia', $row->usia),
 				'catatan_mutasi' => set_value('catatan_mutasi', $row->catatan_mutasi),
 				'jenis_pd' => set_value('jenis_pd', $row->jenis_pd),
+				'userid' => set_value('nohp', $row->userid),
+				'password' => set_value('password'),
+				'email' => set_value('email', $user->email),
+				'nohp' => set_value('nohp', $user->phone),
 			);
 			$data['_view'] = 'master/dospeg_form';
 			$this->load->view('layouts/main',$data);
@@ -170,28 +193,40 @@ class Master extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->update($this->input->post('id', TRUE));
         } else {
-            $data = array(
-		'nama' => $this->input->post('nama',TRUE),
-		'tempat_lahir' => $this->input->post('tempat_lahir',TRUE),
-		'tgl_lahir' => $this->input->post('tgl_lahir',TRUE),
-		'nip' => $this->input->post('nip',TRUE),
-		'nidn' => $this->input->post('nidn',TRUE),
-		'jk' => $this->input->post('jk',TRUE),
-		'golongan' => $this->input->post('golongan',TRUE),
-		'gol_tmt' => $this->input->post('gol_tmt',TRUE),
-		'jabatan' => $this->input->post('jabatan',TRUE),
-		'jabatan_tmt' => $this->input->post('jabatan_tmt',TRUE),
-		'masa_kerja_tahun' => $this->input->post('masa_kerja_tahun',TRUE),
-		'masa_kerja_bulan' => $this->input->post('masa_kerja_bulan',TRUE),
-		'pendidikan' => $this->input->post('pendidikan',TRUE),
-		'tahun_lulus' => $this->input->post('tahun_lulus',TRUE),
-		'tingkat_ijazah' => $this->input->post('tingkat_ijazah',TRUE),
-		'usia' => $this->input->post('usia',TRUE),
-		'catatan_mutasi' => $this->input->post('catatan_mutasi',TRUE),
-		'jenis_pd' => $this->input->post('jenis_pd',TRUE),
-	    );
-
-            $this->Master_model->update($this->input->post('id', TRUE), $data);
+            $datadospeg = array(
+				'nama' => $this->input->post('nama',TRUE),
+				'tempat_lahir' => $this->input->post('tempat_lahir',TRUE),
+				'tgl_lahir' => $this->input->post('tgl_lahir',TRUE),
+				'nip' => $this->input->post('nip',TRUE),
+				'nidn' => $this->input->post('nidn',TRUE),
+				'jk' => $this->input->post('jk',TRUE),
+				'golongan' => $this->input->post('golongan',TRUE),
+				'gol_tmt' => $this->input->post('gol_tmt',TRUE),
+				'jabatan' => $this->input->post('jabatan',TRUE),
+				'jabatan_tmt' => $this->input->post('jabatan_tmt',TRUE),
+				'masa_kerja_tahun' => $this->input->post('masa_kerja_tahun',TRUE),
+				'masa_kerja_bulan' => $this->input->post('masa_kerja_bulan',TRUE),
+				'pendidikan' => $this->input->post('pendidikan',TRUE),
+				'tahun_lulus' => $this->input->post('tahun_lulus',TRUE),
+				'tingkat_ijazah' => $this->input->post('tingkat_ijazah',TRUE),
+				'usia' => $this->input->post('usia',TRUE),
+				'catatan_mutasi' => $this->input->post('catatan_mutasi',TRUE),
+				'jenis_pd' => $this->input->post('jenis_pd',TRUE),
+			);
+			$this->Master_model->update($this->input->post('id', TRUE), $datadospeg);
+						
+			$id = $this->input->post('userid',TRUE);
+			$datausers = array(
+				'email' => $this->input->post('email',TRUE),
+				'first_name' => $this->input->post('nama',TRUE),
+				'phone' => $this->input->post('nohp',TRUE),
+				'username' => $this->input->post('nip',TRUE),
+				'password' => $this->input->post('password',TRUE),
+				);
+			
+			
+			$this->ion_auth->update($id, $datausers);
+			
             $this->session->set_flashdata('message', 'Update Record Success');
             redirect(site_url('master'));
         }
@@ -215,27 +250,16 @@ class Master extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('nama', 'nama', 'trim|required');
-	$this->form_validation->set_rules('tempat_lahir', 'tempat lahir', 'trim|required');
-	$this->form_validation->set_rules('tgl_lahir', 'tgl lahir', 'trim|required');
-	$this->form_validation->set_rules('nip', 'nip', 'trim|required');
-	$this->form_validation->set_rules('nidn', 'nidn', 'trim|required');
-	$this->form_validation->set_rules('jk', 'jk', 'trim|required');
-	$this->form_validation->set_rules('golongan', 'golongan', 'trim|required');
-	$this->form_validation->set_rules('gol_tmt', 'gol tmt', 'trim|required');
-	$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
-	$this->form_validation->set_rules('jabatan_tmt', 'jabatan tmt', 'trim|required');
-	$this->form_validation->set_rules('masa_kerja_tahun', 'masa kerja tahun', 'trim|required');
-	$this->form_validation->set_rules('masa_kerja_bulan', 'masa kerja bulan', 'trim|required');
-	$this->form_validation->set_rules('pendidikan', 'pendidikan', 'trim|required');
-	$this->form_validation->set_rules('tahun_lulus', 'tahun lulus', 'trim|required');
-	$this->form_validation->set_rules('tingkat_ijazah', 'tingkat ijazah', 'trim|required');
-	$this->form_validation->set_rules('usia', 'usia', 'trim|required');
-	$this->form_validation->set_rules('catatan_mutasi', 'catatan mutasi', 'trim|required');
-	$this->form_validation->set_rules('jenis_pd', 'jenis pd', 'trim|required');
+		$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+		$this->form_validation->set_rules('tempat_lahir', 'tempat lahir', 'trim|required');
+		$this->form_validation->set_rules('tgl_lahir', 'tgl lahir', 'trim|required');
+		$this->form_validation->set_rules('nip', 'nip', 'trim|required');
+		$this->form_validation->set_rules('jk', 'jk', 'trim|required');
+		$this->form_validation->set_rules('usia', 'usia', 'trim|required');
+		$this->form_validation->set_rules('jenis_pd', 'jenis pd', 'trim|required');
 
-	$this->form_validation->set_rules('id', 'id', 'trim');
-	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+		$this->form_validation->set_rules('id', 'id', 'trim');
+		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
 }
