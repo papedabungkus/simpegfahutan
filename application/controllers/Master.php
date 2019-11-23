@@ -246,6 +246,22 @@ class Master extends CI_Controller
         }
 	}
 	
+	public function reset($id) 
+    {
+        $row = $this->Master_model->get_by_id($id);
+        if ($row) {
+			
+			$datausers = array(
+				'password' => 'unipa',
+				);
+			$this->ion_auth->update($row->userid, $datausers);
+            $this->session->set_flashdata('message', 'Reset Password Success');
+            redirect(site_url('master'));
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('master'));
+        }
+	}
 
 
     public function _rules() 
