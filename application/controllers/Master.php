@@ -271,8 +271,8 @@ class Master extends CI_Controller
 		$this->form_validation->set_rules('tgl_lahir', 'tgl lahir', 'trim|required');
 		$this->form_validation->set_rules('nip', 'nip', 'trim|required');
 		$this->form_validation->set_rules('jk', 'jk', 'trim|required');
-		$this->form_validation->set_rules('usia', 'usia', 'trim|required');
-		$this->form_validation->set_rules('jenis_pd', 'jenis pd', 'trim|required');
+		$this->form_validation->set_rules('jenis_pd', 'Jenis User', 'trim|required');
+		$this->form_validation->set_rules('password', 'Kata Sandi', 'trim|required');
 
 		$this->form_validation->set_rules('id', 'id', 'trim');
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

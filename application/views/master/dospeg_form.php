@@ -2,6 +2,12 @@
 <section class="page container">
     <div class="row">
         <div class="span16">
+        <?php if (validation_errors()) { ?>
+        <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <?php echo validation_errors('<div class="error">', '</div>'); ?>
+        </div>
+        <?php } ?>
             <div class="box">
                 <div class="box-header">
                     <i class="icon-user"></i>
@@ -15,11 +21,11 @@
                 </div>
 				<div class="span5"><br>
                     <div class="form-group">
-                        <label for="varchar">Nama <?php echo form_error('nama') ?></label>
+                        <label for="varchar">Nama</label>
                         <input type="text" class="form-control span5" name="nama" id="nama" placeholder="Nama" value="<?php echo $nama; ?>" />
                     </div>
                     <div class="form-group">
-                        <label for="varchar">Tempat Tgl. Lahir <?php echo form_error('tempat_lahir') ?></label>
+                        <label for="varchar">Tempat Tgl. Lahir</label>
                         <input type="text" class="form-control span3" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat Lahir" value="<?php echo $tempat_lahir; ?>" />
                         <input type="text" class="form-control span2 datepicker" name="tgl_lahir" id="tgl_lahir" placeholder="Tgl Lahir" value="<?php echo $tgl_lahir; ?>" />
                     </div>
@@ -91,10 +97,6 @@
 								?>
 							</select>
                             <input type="text" class="form-control span2 datepicker" name="gol_tmt" id="gol_tmt" placeholder="Gol TMT" value="<?php echo $gol_tmt; ?>" />
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Gol TMT <?php echo form_error('gol_tmt') ?></label>
-                        
                     </div>
                     <div class="form-group">
                         <label for="varchar">Jabatan <?php echo form_error('jabatan') ?></label>

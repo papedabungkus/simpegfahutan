@@ -21,7 +21,7 @@
                         <table class="table table-bordered table-striped" id="tabledosen">
                             <thead>
                                 <tr>
-                                    <th width="80px">No</th>
+                                    <th width="20px">No</th>
                                     <th>Nama</th>
                                     <th>NIP</th>
                                     <th>NIDN</th>
@@ -55,7 +55,7 @@
                         <table class="table table-bordered table-striped" id="tablepegawai">
                             <thead>
                                 <tr>
-                                    <th width="80px">No</th>
+                                    <th width="20px">No</th>
                                     <th>Nama</th>
                                     <th>NIP</th>
                                     <th>Tempat Tgl. Lahir</th>
@@ -121,6 +121,7 @@
                             }
                         });
                     },
+                    
                     "lengthChange": false,
                     "bInfo": false,
                     "bPaginate": false,
