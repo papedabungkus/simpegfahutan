@@ -134,7 +134,7 @@
                         {
                             "data": "id",
                             "orderable": false
-                        },{"data": "nama"},{"data": "nip"},{"data": "nidn"},{"data": "tempat_lahir"},{"data": "jk"},{"data": "golongan"},{"data": "jabatan"},
+                        },{"data": "nama"},{"data": "nip","orderable": false},{"data": "nidn","orderable": false},{"data": "ttl","orderable": false},{"data": "jk","orderable": false},{"data": "golongan"},{"data": "jabatan","orderable": false},
                         {
                             "data" : "action",
                             "orderable": false,
@@ -175,7 +175,7 @@
                         {
                             "data": "id",
                             "orderable": false
-                        },{"data": "nama"},{"data": "nip"},{"data": "tempat_lahir"},{"data": "jk"},{"data": "golongan"},{"data": "jabatan"},
+                        },{"data": "nama"},{"data": "nip","orderable": false},{"data": "ttl","orderable": false},{"data": "jk","orderable": false},{"data": "golongan"},{"data": "jabatan","orderable": false},
                         {
                             "data" : "action",
                             "orderable": false,

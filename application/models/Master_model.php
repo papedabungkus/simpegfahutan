@@ -17,8 +17,8 @@ class Master_model extends CI_Model
 
     // datatables
     function jsondosen() {
-        $this->datatables->select('id,nama,nip,nidn,tempat_lahir,jk,golongan,jabatan');
-        $this->datatables->from('dospeg');
+        $this->datatables->select('id,nama,nip,nidn,ttl,jk,golongan,jabatan');
+        $this->datatables->from('v_dospeg');
         $this->datatables->where('jenis_pd','dosen');
         //add this line for join
         //$this->datatables->join('table2', 'dospeg.field = table2.field');
@@ -27,8 +27,8 @@ class Master_model extends CI_Model
     }
 
     function jsonpegawai() {
-        $this->datatables->select('id,nama,nip,nidn,tempat_lahir,jk,golongan,jabatan');
-        $this->datatables->from('dospeg');
+        $this->datatables->select('id,nama,nip,nidn,ttl,jk,golongan,jabatan');
+        $this->datatables->from('v_dospeg');
         $this->datatables->where('jenis_pd','pegawai');
         $this->datatables->add_column('action',anchor(site_url('master/update/$1'),'<i class="btn-icon-only icon-pencil"> </i>',array('class'=>'btn btn-small btn-info'))." ".anchor(site_url('master/delete/$1'),'<i class="btn-icon-only icon-remove"> </i>',array('onclick'=>'javasciprt: return confirm(\'Are You Sure ?\')','class'=>'btn btn-small btn-danger')), 'id');
         return $this->datatables->generate();
