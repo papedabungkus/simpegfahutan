@@ -44,7 +44,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
   <tr><td colspan="3"><br></td></tr>
   <tr><td colspan="3"><p>Yang bertanda tangan di bawah ini,</p></td></tr>
 </table>
-<table width="90%" border="1" cellspacing="0" cellpadding="8" align="right">
+<table width="90%" border="1" cellspacing="0" cellpadding="5" align="right">
     <tr>
         <td width="20%">Nama</td><td align="center">:</td><td><?php echo $namatu; ?></td>
     </tr>
@@ -64,7 +64,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <td><br><p align="justify">Dengan ini menerangkan bahwa staf dosen Fahutan UNIPA yang namanya tercantum di bawah ini sedang aktif melaksanakan tugas mengajar.  Staf tersebut telah lulus seleksi SERDOS 2016 dan menerima seritikat (terlampir).</p><br></td>
     </tr>
 </table>
-<table width="90%" border="1" cellspacing="0" cellpadding="8" align="right">
+<table width="90%" border="1" cellspacing="0" cellpadding="5" align="right">
     <tr>
         <th>No.</th><th>Nama</th><th>NIP</th><th>Pangkat/Golongan</th>
     </tr>
