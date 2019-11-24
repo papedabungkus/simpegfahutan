@@ -119,6 +119,37 @@
                             </div>
                         </form>
                     </div>
+                    <?php } elseif(isset($_POST['btnCari']) && $_POST['cmbSurat']=='3') {?>
+                        <div class="blockoff-right">
+                        <form target="_BLANK" class="form-inline" action="<?php echo base_url('surat/cetaksurataktiftugas'); ?>" method="POST">
+                            <h4>Parameter Isian Surat Keterangan Aktif Melaksanakan Tugas</h4>
+                            
+                            <p>Nama Pembuat Keterangan</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="namatu" class="span7" type="text" id="txtDospeg" placeholder="Ketik NIP/Nama Pembuat Keterangan">
+                            </div>
+                            <p>Jabatan</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="jabatan" class="span7" type="text" value="DEKAN FAKULTAS KEHUTANAN">
+                            </div>
+                            <p>Dengan ini menerangkan bahwa staf dosen Fahutan UNIPA yang namanya tercantum di bawah ini sedang aktif melaksanakan tugas mengajar.  </p>
+                            
+                            <p>Nama Dosen</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="txtDosen" class="span7" type="text" id="txtDosen" placeholder="Ketik NIP/Nama Dosen">
+                            </div>
+                            <p>&nbsp;</p>
+                            <div class="input-prepend">
+                                <button name="btnCetak" type="submit" class="btn btn-success">
+                                <i class="icon-print"></i>
+                                    Cetak
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                     <?php } ?>
                 </div>
             </div>
@@ -132,6 +163,9 @@
 
                 $("#txtDosen").autocomplete({
                 source: "<?php echo site_url('surat/get_autocomplete_dosen/?');?>"
+                });
+                $("#txtDospeg").autocomplete({
+                source: "<?php echo site_url('surat/get_autocomplete_dospeg/?');?>"
                 });
             });
         </script>

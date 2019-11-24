@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Surat Keterangan Aktif Kuliah</title>
+<title>Surat Keterangan Aktif Melaksanakan Tugas</title>
 <style type="text/css">
 .style1 {
 	font-family: "Times New Roman", Times, serif;
@@ -19,7 +19,7 @@
 </style>
 </head>
 
-<body onload="window.print();">
+<body>
 <table width="90%" height="132" border="0" align="right">
   <tr>
     <td width="15%" height="116" bordercolor="#FFFFFF"><div align="center"><img src="<?php echo base_url('assets/unipa.png'); ?>" width="70" height="70" /></div></td>
@@ -38,13 +38,13 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
 <table width="90%" border="0" align="right">
   <tr>
     <td height="70" width="15%"></td>
-    <td width="70%" align="center"><span class="style10">SURAT KETERANGAN AKTIF KULIAH</span><br><span class="style11">Nomor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6.5.1/KM/2019</span></td>
+    <td width="70%" align="center"><span class="style10">SURAT KETERANGAN AKTIF MELAKSANAKAN TUGAS</span><br><span class="style11">Nomor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6/KP/2019</span></td>
     <td width="15%">&nbsp;</td>
   </tr>
   <tr><td colspan="3"><br></td></tr>
   <tr><td colspan="3"><p>Yang bertanda tangan di bawah ini,</p></td></tr>
 </table>
-<table width="90%" border="0" align="right">
+<table width="90%" border="1" cellspacing="0" cellpadding="0" align="right">
     <tr>
         <td width="20%">Nama</td><td>:</td><td><?php echo $namatu; ?></td>
     </tr>
@@ -52,47 +52,46 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <td>NIP</td><td>:</td><td><?php echo $niptu; ?></td>
     </tr>
     <tr>
-        <td>Pangkat/Golongan</td><td>:</td><td><?php echo $pangkatgolongan; ?></td>
+        <td>Pangkat/Golongan</td><td>:</td><td><?php echo $pangkattu." ".$golongantu; ?></td>
     </tr>
     <tr>
         <td>Jabatan</td><td>:</td><td><?php echo $jabatan; ?></td>
     </tr>
+</table>
+
+<table width="90%" border="0" align="right">
     <tr>
-        <td colspan="3">Dengan ini menerangkan bahwa,</td>
+        <td><br><p align="justify">Dengan ini menerangkan bahwa staf dosen Fahutan UNIPA yang namanya tercantum di bawah ini sedang aktif melaksanakan tugas mengajar.  Staf tersebut telah lulus seleksi SERDOS 2016 dan menerima seritikat (terlampir).</p><br></td>
+    </tr>
+</table>
+<table width="90%" border="1" cellspacing="0" cellpadding="0" align="right">
+    <tr>
+        <th>No.</th><th>Nama</th><th>NIP</th><th>Pangkat/Golongan</th>
     </tr>
     <tr>
-        <td width="20%">Nama</td><td>:</td><td><?php echo $namamahasiswa; ?></td>
+        <td align="center" width="10%">1</td><td><?php echo $namadosen; ?></td><td><?php echo $nipdosen; ?></td><td align="center"><?php echo $pangkatdosen." ".$golongandosen; ?></td>
     </tr>
+</table>
+<table width="90%" border="0" align="right">
     <tr>
-        <td>NIM</td><td>:</td><td><?php echo $nimmahasiswa; ?></td>
-    </tr>
-    <tr>
-        <td>Program Studi</td><td>:</td><td><?php echo $prodi; ?></td>
-    </tr>
-    <tr>
-        <td>Jurusan</td><td>:</td><td>KEHUTANAN</td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <p align="justify">Yang bersangkutan adalah benar-benar terdaftar sebagai mahasiswa Fakultas Kehutanan Universitas Papua dan aktif kuliah pada semester gasal tahun akademik 2019/2020.</p>
-            <p align="justify">Surat Keterangan Aktif Kuliah ini berlaku selama 1(satu) semester pada semester gasal tahun akademik 2019/2020.</p>
-            <p align="justify">Demikian Surat Keterangan ini dibuat dengan sebenar-benarnya untuk dapat dipergunakan sebagaimana mestinya.</p>
-        </td>
+        <td><br><p align="justify">Untuk kepentingan tersebut kepada yang bersangkutan dapat diberikan haknya sesuai dengan ketentuan yang berlaku.  Demikian surat keterangan ini dibuat untuk dipergunakan sebagaimana  mestinya.</p><br></td>
     </tr>
 </table>
 <table width="90%" border="0" align="right">
     <tr>
         <td width="60%">&nbsp;</td>
         <td width="40%">
-            Manokwari, <?php echo $tanggalsurat; ?><br>A.n. Dekan<br><?php echo ucwords(strtolower($jabatan)); ?>,<br><br><br><br><br>
+            Manokwari, <?php echo $tanggalsurat; ?><br><?php echo ucwords(strtolower($jabatan)); ?>,<br><br><br><br><br>
             <?php echo $namatu; ?><br>NIP. <?php echo $niptu; ?>
         </td>
     </tr>
     <tr>
         <td colspan="2">Tembusan : 
             <ol type="1">
-                <li>Dekan (Sebagai Laporan)</li>
+                <li>Wakil Dekan I</li>
                 <li>Ketua Jurusan Kehutanan</li>
+                <li>Kabag. TU Fahutan</li>
+                <li>Ybs</li>
                 <li>Arsip</li>
             </ol>
         </td>

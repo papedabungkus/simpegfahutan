@@ -49,6 +49,17 @@ class Surat extends CI_Controller{
         }
     }
 
+    function get_autocomplete_dospeg(){
+        if (isset($_GET['term'])) {
+            $result = $this->Surat_model->search_dospeg($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nip." - ".$row->nama;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
     function cetaksurattugasbelajar() 
     {
         if(isset($_POST['btnCetak'])){
@@ -97,5 +108,27 @@ class Surat extends CI_Controller{
             );
         }
         $this->load->view('surat/aktif_kuliah',$data);
+    }
+
+    function cetaksurataktiftugas()
+    {
+        $nipdosen = substr($_POST['txtDosen'],0,18);
+        $niptu = substr($_POST['namatu'],0,18);
+        $golongantu = $this->db->query("SELECT golongan FROM dospeg WHERE nip=$niptu")->row()->golongan;
+        $golongandosen = $this->db->query("SELECT golongan FROM dospeg WHERE nip=$nipdosen")->row()->golongan;
+        $data = array(
+            'namatu' => $this->db->query("SELECT nama FROM dospeg WHERE nip=$niptu")->row()->nama,
+            'niptu' => $niptu,
+            'golongantu' => $golongantu,
+            'pangkattu' => $this->db->query("SELECT pangkat FROM pangkatgol WHERE golongan='$golongantu'")->row()->pangkat,
+            'jabatan' => $_POST['jabatan'],
+            'namadosen' => $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipdosen")->row()->nama,
+            'nipdosen' => $nipdosen,
+            'golongandosen' => $golongandosen,
+            'pangkatdosen' => $this->db->query("SELECT pangkat FROM pangkatgol WHERE golongan='$golongandosen'")->row()->pangkat,
+            'tanggalsurat' => tgl_indo(date('Y-m-d'))
+        );
+        $this->load->view('surat/aktif_tugas',$data);
+
     }
 }
