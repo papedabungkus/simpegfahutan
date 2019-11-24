@@ -17,7 +17,7 @@
 </style>
 </head>
 
-<body>
+<body onload="window.print();">
 <table width="90%" height="132" border="0" align="right">
   <tr>
     <td width="20%" height="116" bordercolor="#FFFFFF"><div align="center"><img src="<?php echo base_url('assets/unipa.png'); ?>" width="70" height="70" /></div></td>
@@ -92,7 +92,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
   </tr>
   <tr>
     <td colspan="3" class="style8">&nbsp;</td>
-    <td class="style8">A.n. Dekan<br><?php echo ucwords(strtolower($jabatan)); ?>
+    <td class="style8"><br><?php echo ucwords(strtolower($jabatan)); ?>,
     <p>&nbsp;</p>
     <p><?php echo $namadekan; ?><br />NIP. <?php echo $nipdekan; ?> </p></td>
   </tr>

@@ -191,7 +191,7 @@
                             <p>Jabatan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="jabatan" class="span7" type="text" placeholder="Tuliskan Jabatan Yang Menandatangani Surat">
+                                <input name="jabatan" class="span7" type="text" value="Dekan" placeholder="Tuliskan Jabatan Yang Menandatangani Surat">
                             </div>
                             <div class="input-prepend">
                                 <br>
