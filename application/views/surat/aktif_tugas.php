@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Surat Keterangan Aktif Melaksanakan Tugas</title>
+<title>Surat Keterangan Aktif Melaksanakan Tugas - <?php echo $namadosen; ?></title>
 <style type="text/css">
 .style1 {
 	font-family: "Times New Roman", Times, serif;
@@ -44,18 +44,18 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
   <tr><td colspan="3"><br></td></tr>
   <tr><td colspan="3"><p>Yang bertanda tangan di bawah ini,</p></td></tr>
 </table>
-<table width="90%" border="1" cellspacing="0" cellpadding="0" align="right">
+<table width="90%" border="1" cellspacing="0" cellpadding="8" align="right">
     <tr>
-        <td width="20%">Nama</td><td>:</td><td><?php echo $namatu; ?></td>
+        <td width="20%">Nama</td><td align="center">:</td><td><?php echo $namatu; ?></td>
     </tr>
     <tr>
-        <td>NIP</td><td>:</td><td><?php echo $niptu; ?></td>
+        <td>NIP</td><td align="center">:</td><td><?php echo $niptu; ?></td>
     </tr>
     <tr>
-        <td>Pangkat/Golongan</td><td>:</td><td><?php echo $pangkattu." ".$golongantu; ?></td>
+        <td>Pangkat/Golongan</td><td align="center">:</td><td><?php echo $pangkattu." ".$golongantu; ?></td>
     </tr>
     <tr>
-        <td>Jabatan</td><td>:</td><td><?php echo $jabatan; ?></td>
+        <td>Jabatan</td><td align="center">:</td><td><?php echo $jabatan; ?></td>
     </tr>
 </table>
 
@@ -64,7 +64,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <td><br><p align="justify">Dengan ini menerangkan bahwa staf dosen Fahutan UNIPA yang namanya tercantum di bawah ini sedang aktif melaksanakan tugas mengajar.  Staf tersebut telah lulus seleksi SERDOS 2016 dan menerima seritikat (terlampir).</p><br></td>
     </tr>
 </table>
-<table width="90%" border="1" cellspacing="0" cellpadding="0" align="right">
+<table width="90%" border="1" cellspacing="0" cellpadding="8" align="right">
     <tr>
         <th>No.</th><th>Nama</th><th>NIP</th><th>Pangkat/Golongan</th>
     </tr>
