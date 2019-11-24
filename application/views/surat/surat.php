@@ -56,12 +56,7 @@
                             <p>Nama Dekan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="namadekan" class="span7" type="text" value="Dr. Jonni Marwa, S.Hut., M.Si">
-                            </div>
-                            <p>NIP Dekan</p>
-                            <div class="input-prepend">
-                                <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="nipdekan" class="span7" type="text" value="197406032001121001">
+                                <input name="namadekan" class="span7" type="text"  id="txtDospeg"  value="Dr. Jonni Marwa, S.Hut., M.Si">
                             </div>
                             <div class="input-prepend">
                                 <br>
@@ -84,12 +79,7 @@
                             <p>Nama Pembuat Keterangan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="namatu" class="span7" type="text" value="NICHOLAS AIDORE, S.Pi">
-                            </div>
-                            <p>NIP</p>
-                            <div class="input-prepend">
-                                <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="niptu" class="span7" type="text" value="196306191987031004">
+                                <input name="namatu" class="span7" type="text"  id="dospeg" value="NICHOLAS AIDORE, S.Pi">
                             </div>
                             <p>Pangkat/Golongan</p>
                             <div class="input-prepend">
@@ -156,6 +146,55 @@
                             </div>
                             <p>&nbsp;</p>
                             <div class="input-prepend">
+                                <button name="btnCetak" type="submit" class="btn btn-success">
+                                <i class="icon-print"></i>
+                                    Cetak
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <?php } elseif(isset($_POST['btnCari']) && $_POST['cmbSurat']=='4') { ?>
+                    <div class="blockoff-right">
+                        <form target="_BLANK" class="form-inline" action="<?php echo base_url('surat/cetakusulankenaikanpangkatfungsional'); ?>" method="POST">
+                            <h4>Parameter Isian Surat Usulan Kenaikan Pangkat Jabatan Fungsional</h4>
+                            <p>Nomor Surat</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="nomorsurat" class="span7" type="text" value="&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6/KP/2019">
+                            </div>
+                            <p>Lampiran</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="lampiran" class="span7" type="text" value="1 (Satu) Berkas">
+                            </div>
+                            <p>Nama Yang Diusulkan</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="namaY" class="span7" type="text" id="txtDosen" placeholder="Ketik NIP/Nama Dosen">
+                            </div>
+                            <p>Jabatan Yang Diusulkan</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="jabatanusul" class="span7" type="text" placeholder="Tuliskan jabatan yang diusulkan">
+                            </div>
+                            <p>Jumlah Nilai KUM</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="jumlahKUM" class="span7" type="number" placeholder="Tuliskan jumlah nilai KUM">
+                            </div>
+                            
+                            <p>Nama Tanda Tangan</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="namadekan" class="span7" id="txtDospeg" type="text" value="">
+                            </div>
+                            <p>Jabatan</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="jabatan" class="span7" type="text" placeholder="Tuliskan Jabatan Yang Menandatangani Surat">
+                            </div>
+                            <div class="input-prepend">
+                                <br>
                                 <button name="btnCetak" type="submit" class="btn btn-success">
                                 <i class="icon-print"></i>
                                     Cetak

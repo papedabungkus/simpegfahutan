@@ -69,7 +69,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <th>No.</th><th>Nama</th><th>NIP</th><th>Pangkat/Golongan</th>
     </tr>
     <tr>
-        <td align="center" width="10%">1</td><td><?php echo $namadosen; ?></td><td><?php echo $nipdosen; ?></td><td align="center"><?php echo $pangkatdosen." ".$golongandosen; ?></td>
+        <td align="center" width="10">1</td><td><?php echo $namadosen; ?></td><td><?php echo $nipdosen; ?></td><td align="center"><?php echo $pangkatdosen." ".$golongandosen; ?></td>
     </tr>
 </table>
 <table width="90%" border="0" align="right">

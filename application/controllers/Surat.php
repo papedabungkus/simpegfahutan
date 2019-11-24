@@ -134,4 +134,35 @@ class Surat extends CI_Controller{
         $this->load->view('surat/aktif_tugas',$data);
 
     }
+
+    function cetakusulankenaikanpangkatfungsional() 
+    {
+        if(isset($_POST['btnCetak'])){
+            $nipY = substr($_POST['namaY'],0,18);
+            $namaY = $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipY")->row()->nama;
+            $jabatanY = $this->db->query("SELECT jabatan FROM dospeg WHERE nip=$nipY")->row()->jabatan;
+            $golY = $this->db->query("SELECT golongan FROM dospeg WHERE nip=$nipY")->row()->golongan;
+            $jabatanusul = $_POST['jabatanusul'];
+            $jumlahKUM = $_POST['jumlahKUM'];
+            $nipdekan = substr($_POST['namadekan'],0,18);
+            $namadekan = $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipdekan")->row()->nama;
+            $jabatan = $_POST['jabatan'];
+        }
+        $data = array(
+            'nomorsurat' => $_POST['nomorsurat'],
+            'lampiran' => $_POST['lampiran'],
+            'nipY' => $nipY,
+            'namaY' => $namaY,
+            'jabatanY' => $jabatanY,
+            'golY' => $golY,
+            'pangkatY' => $this->db->query("SELECT pangkat FROM pangkatgol WHERE golongan='$golY'")->row()->pangkat,
+            'jabatanusul' => $jabatanusul,
+            'jumlahKUM' => $jumlahKUM,
+            'namadekan' => $namadekan,
+            'nipdekan' => $nipdekan,
+            'jabatan' => $jabatan,
+            'tanggalsurat' => tgl_indo(date('Y-m-d'))
+        );
+        $this->load->view('surat/naik_pangkat_fungsional',$data);
+    }
 }
