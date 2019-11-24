@@ -37,7 +37,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
   <tr>
     <td width="14%" height="10" valign="top"><span class="style8">Nomor<br />Lampiran<br />Hal</span></td>
     <td width="2%" valign="top"><span class="style8">:<br />:<br />:</span></td>
-    <td width="50%" valign="top"><span class="style8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6/KP/2019<br />1 (Satu) Berkas <br />Usulan Pemberian Tugas Belajar </span></td>
+    <td width="50%" valign="top"><span class="style8"><?php echo $nomorsurat; ?><br />1 (Satu) Berkas <br />Usulan Pemberian Tugas Belajar </span></td>
     <td width="34%" valign="top"><div align="right" class="style8"><?php echo $tanggalsurat; ?></div></td>
   </tr>
   <tr>

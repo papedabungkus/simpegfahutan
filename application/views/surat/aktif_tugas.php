@@ -38,7 +38,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
 <table width="90%" border="0" align="right">
   <tr>
     <td height="70" width="15%"></td>
-    <td width="70%" align="center"><span class="style10">SURAT KETERANGAN AKTIF MELAKSANAKAN TUGAS</span><br><span class="style11">Nomor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6/KP/2019</span></td>
+    <td width="70%" align="center"><span class="style10">SURAT KETERANGAN AKTIF MELAKSANAKAN TUGAS</span><br><span class="style11">Nomor: <?php echo $nomorsurat; ?></span></td>
     <td width="15%">&nbsp;</td>
   </tr>
   <tr><td colspan="3"><br></td></tr>

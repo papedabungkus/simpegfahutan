@@ -28,6 +28,11 @@
                     <div class="blockoff-right">
                         <form target="_BLANK" class="form-inline" action="<?php echo base_url('surat/cetaksurattugasbelajar'); ?>" method="POST">
                             <h4>Parameter Isian Surat Tugas Belajar</h4>
+                            <p>Nomor Surat</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="nomorsurat" class="span7" type="text" value="&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6/KP/2019">
+                            </div>
                             <p>Nama Dosen</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
@@ -71,7 +76,11 @@
                         <div class="blockoff-right">
                         <form target="_BLANK" class="form-inline" action="<?php echo base_url('surat/cetaksurataktifkuliah'); ?>" method="POST">
                             <h4>Parameter Isian Surat Keterangan Aktif Kuliah</h4>
-                            
+                            <p>Nomor Surat</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="nomorsurat" class="span7" type="text" value="&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6.5.1/KM/2019">
+                            </div>
                             <p>Nama Pembuat Keterangan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
@@ -123,7 +132,11 @@
                         <div class="blockoff-right">
                         <form target="_BLANK" class="form-inline" action="<?php echo base_url('surat/cetaksurataktiftugas'); ?>" method="POST">
                             <h4>Parameter Isian Surat Keterangan Aktif Melaksanakan Tugas</h4>
-                            
+                            <p>Nomor Surat</p>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="nomorsurat" class="span7" type="text" value="&nbsp;&nbsp;&nbsp;&nbsp;/UN42.6/KP/2019">
+                            </div>
                             <p>Nama Pembuat Keterangan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>

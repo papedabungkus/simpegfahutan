@@ -72,6 +72,7 @@ class Surat extends CI_Controller{
             $nipdekan = $_POST['nipdekan'];
         }
         $data = array(
+            'nomorsurat' => $_POST['nomorsurat'],
             'namadosen' => $namadosen,
             'nipdosen' => $nipdosen,
             'pendidikan' => $pendidikan,
@@ -94,17 +95,18 @@ class Surat extends CI_Controller{
         $fakultas = $fakultasx['fakultas'];
         if(isset($_POST['btnCetak'])){
             $data = array(
-            'namatu' => $_POST['namatu'],
-            'niptu' => $_POST['niptu'],
-            'pangkatgolongan' => $_POST['pangkatgolongan'],
-            'jabatan' => $_POST['jabatan'],
-            'namamahasiswa' => $namamahasiswa,
-            'nimmahasiswa' => $nimmahasiswa,
-            'prodi' => $prodi,
-            'fakultas' => $fakultas,
-            'semester' => $_POST['semester'],
-            'tahunakademik' => $_POST['tahunakademik'],
-            'tanggalsurat' => tgl_indo(date('Y-m-d'))
+                'nomorsurat' => $_POST['nomorsurat'],
+                'namatu' => $_POST['namatu'],
+                'niptu' => $_POST['niptu'],
+                'pangkatgolongan' => $_POST['pangkatgolongan'],
+                'jabatan' => $_POST['jabatan'],
+                'namamahasiswa' => $namamahasiswa,
+                'nimmahasiswa' => $nimmahasiswa,
+                'prodi' => $prodi,
+                'fakultas' => $fakultas,
+                'semester' => $_POST['semester'],
+                'tahunakademik' => $_POST['tahunakademik'],
+                'tanggalsurat' => tgl_indo(date('Y-m-d'))
             );
         }
         $this->load->view('surat/aktif_kuliah',$data);
@@ -117,6 +119,7 @@ class Surat extends CI_Controller{
         $golongantu = $this->db->query("SELECT golongan FROM dospeg WHERE nip=$niptu")->row()->golongan;
         $golongandosen = $this->db->query("SELECT golongan FROM dospeg WHERE nip=$nipdosen")->row()->golongan;
         $data = array(
+            'nomorsurat' => $_POST['nomorsurat'],
             'namatu' => $this->db->query("SELECT nama FROM dospeg WHERE nip=$niptu")->row()->nama,
             'niptu' => $niptu,
             'golongantu' => $golongantu,
