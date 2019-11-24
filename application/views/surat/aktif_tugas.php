@@ -19,7 +19,7 @@
 </style>
 </head>
 
-<body>
+<body onload="window.print();">
 <table width="90%" height="132" border="0" align="right">
   <tr>
     <td width="15%" height="116" bordercolor="#FFFFFF"><div align="center"><img src="<?php echo base_url('assets/unipa.png'); ?>" width="70" height="70" /></div></td>
