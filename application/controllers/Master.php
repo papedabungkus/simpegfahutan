@@ -97,8 +97,9 @@ class Master extends CI_Controller
     
     public function create_action() 
     {
-        $this->_rules();
-
+		$this->form_validation->set_rules('password', 'Kata Sandi', 'trim|required');
+		$this->_rules();
+		
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
@@ -221,9 +222,12 @@ class Master extends CI_Controller
 				'first_name' => $this->input->post('nama',TRUE),
 				'phone' => $this->input->post('nohp',TRUE),
 				'username' => $this->input->post('nip',TRUE),
-				'password' => $this->input->post('password',TRUE),
 				);
-			
+
+				if ($this->input->post('password'))
+				{
+					$data['password'] = $this->input->post('password',TRUE);
+				}
 			
 			$this->ion_auth->update($id, $datausers);
 			
@@ -266,14 +270,13 @@ class Master extends CI_Controller
 
     public function _rules() 
     {
-		$this->form_validation->set_rules('nama', 'nama', 'trim|required');
-		$this->form_validation->set_rules('tempat_lahir', 'tempat lahir', 'trim|required');
-		$this->form_validation->set_rules('tgl_lahir', 'tgl lahir', 'trim|required');
-		$this->form_validation->set_rules('nip', 'nip', 'trim|required');
-		$this->form_validation->set_rules('jk', 'jk', 'trim|required');
+		$this->form_validation->set_rules('nama', 'Nama Dosen/Pegawai', 'trim|required');
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'trim|required');
+		$this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'trim|required');
+		$this->form_validation->set_rules('nip', 'NIP/NIDN/NIK', 'trim|required');
+		$this->form_validation->set_rules('jk', 'Jenis Kelamin', 'trim|required');
 		$this->form_validation->set_rules('jenis_pd', 'Jenis User', 'trim|required');
-		$this->form_validation->set_rules('password', 'Kata Sandi', 'trim|required');
-
+		
 		$this->form_validation->set_rules('id', 'id', 'trim');
 		$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }

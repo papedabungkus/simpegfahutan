@@ -1,6 +1,14 @@
     <section class="page container">
+     
         <div class="row">
+        
             <div class="span16">
+            <?php if($this->session->flashdata('message')){ ?>  
+            <div class="alert alert-info">  
+            <a href="#" class="close" data-dismiss="alert">&times;</a>  
+            <strong> <?php echo $this->session->flashdata('message'); ?>  </strong>
+            </div> 
+            <?php } ?> 
                 <div class="box">
                     <div class="box-header">
                         <i class="icon-user"></i>
@@ -173,3 +181,13 @@
         $('.datepicker').datepicker();
     });
 </script>
+<script type="application/javascript">  
+     /** After windod Load */  
+     $(window).bind("load", function() {  
+       window.setTimeout(function() {  
+         $(".alert").fadeTo(500, 0).slideUp(500, function() {  
+           $(this).remove();  
+         });  
+       }, 500);  
+     });  
+   </script>
