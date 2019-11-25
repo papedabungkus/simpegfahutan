@@ -29,7 +29,7 @@
                             <script type="text/javascript" src="<?php echo base_url('assets/dropzone/dropzone.min.js') ?>"></script>
                             <div class="dropzone">
                                 <div class="dz-message">
-                                    <h3> Klik atau Drop File disini</h3>
+                                    <h4> Klik atau Drop File disini</h4><h6>Maksimal 2 MB</h6>
                                 </div>
                             </div>
                             <script type="text/javascript">
