@@ -36,7 +36,7 @@
                                 Dropzone.autoDiscover = false;
                                 var foto_upload= new Dropzone(".dropzone",{
                                 url: "<?php echo base_url('pengumuman/upload/')?>",
-                                
+                                maxFilesize: 4,
                                 method:"post",
                                 acceptedFiles:"image/jpeg, image/png, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                                 paramName:"userfile",
