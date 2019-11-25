@@ -17,7 +17,7 @@
                                     <a class="news-item-title" style="color:#047a2c; text-decoration: none;"><?php echo tanggalwaktu($informasi['datetime']);?></a>
                                     <p class="news-item-preview">
                                         <?=$informasi['judul'];?></p>
-                                            <a href="<?=$informasi['url'];?>" class="btn btn-small btn-success">
+                                            <a target="_BLANK" href="<?=$informasi['url'];?>" class="btn btn-small btn-success">
                                             <i class="btn-icon-only icon-download"></i>Download</a>                                    
                                 </div>
                             </li>
