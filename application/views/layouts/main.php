@@ -8,7 +8,7 @@
     
     <meta name="layout" content="main"/>
     
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <script src="<?php echo base_url('assets/template/js/jquery/jquery-1.8.2.min.js');?>" type="text/javascript" ></script>
     <link href="<?php echo base_url('assets/template/css/customize-template.css');?>" type="text/css" media="screen, projection" rel="stylesheet" />
