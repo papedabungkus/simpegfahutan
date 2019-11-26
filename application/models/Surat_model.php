@@ -25,6 +25,13 @@ class Surat_model extends CI_Model{
         return $this->db->get('dospeg')->result();
     }
 
+    function search_jabatan($term){
+        $this->db->like('jabatan_struktural',$term ,'both');
+        $this->db->order_by('id', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('jabatan_struktural')->result();
+    }
+
     function get_mahasiswa($nim){
         return $this->db->get_where('mahasiswa',array('nim'=>$nim))->row_array(); 
     }

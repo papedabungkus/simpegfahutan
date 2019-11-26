@@ -56,7 +56,7 @@
                             <p>Nama Dekan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="namadekan" class="span7" type="text"  id="txtDospeg"  value="Dr. Jonni Marwa, S.Hut., M.Si">
+                                <input name="namadekan" class="span7" type="text"  id="txtDospeg"  value="197406032001121001 - Dr. Joni Marwa, S.Hut, M.Si">
                             </div>
                             <div class="input-prepend">
                                 <br>
@@ -79,17 +79,12 @@
                             <p>Nama Pembuat Keterangan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="namatu" class="span7" type="text"  id="dospeg" value="NICHOLAS AIDORE, S.Pi">
-                            </div>
-                            <p>Pangkat/Golongan</p>
-                            <div class="input-prepend">
-                                <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="pangkatgolongan" class="span7" type="text" value="PENATA MUDA TK. I/III/B">
+                                <input name="namatu" class="span7" type="text"  id="txtDospeg" value="196306191987031004 - Nicholas Aidore, S.Pi">
                             </div>
                             <p>Jabatan</p>
                             <div class="input-prepend">
                                 <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="jabatan" class="span7" type="text" value="KEPALA SUB BAGIAN AKADEMIK DAN KEMAHASISWAAN">
+                                <input name="jabatan" class="span7" type="text" id="jabatan">
                             </div>
                             <p>Nama/NIM Mahasiswa</p>
                             <div class="input-prepend">
@@ -218,6 +213,9 @@
                 });
                 $("#txtDospeg").autocomplete({
                 source: "<?php echo site_url('surat/get_autocomplete_dospeg/?');?>"
+                });
+                $("#jabatan").autocomplete({
+                source: "<?php echo site_url('surat/get_autocomplete_jabatan/?');?>"
                 });
             });
         </script>

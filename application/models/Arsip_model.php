@@ -19,6 +19,14 @@ class Arsip_model extends CI_Model
         WHERE d.id=ad.id_dosen AND a.id=ad.id_arsip");
         return $query->result_array();
     }
+
+    function search_dospeg($term){
+        $this->db->like('nip',$term ,'both');
+        $this->db->or_like('nama',$term,'both');
+        $this->db->order_by('nama', 'ASC');
+        $this->db->limit(10);
+        return $this->db->get('dospeg')->result();
+    }
         
     
 }

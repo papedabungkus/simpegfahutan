@@ -110,4 +110,15 @@ class Arsip extends CI_Controller{
         $this->db->delete('arsip_dosen',array('id'=>$idarsipdosen));
         redirect('arsip/index/'.$iddosen);
     }
+
+    function get_autocomplete_dospeg(){
+        if (isset($_GET['term'])) {
+            $result = $this->Arsip_model->search_dospeg($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->nip." - ".$row->nama;
+                echo json_encode($arr_result);
+            }
+        }
+    }
 }

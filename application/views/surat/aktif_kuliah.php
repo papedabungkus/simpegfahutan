@@ -42,7 +42,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
     <td width="15%">&nbsp;</td>
   </tr>
   <tr><td colspan="3"><br></td></tr>
-  <tr><td colspan="3"><p>Yang bertanda tangan di bawah ini,</p></td></tr>
+  <tr><td colspan="3">Yang bertanda tangan di bawah ini,</td></tr>
 </table>
 <table width="90%" border="0" align="right">
     <tr>
@@ -52,13 +52,13 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <td>NIP</td><td>:</td><td><?php echo $niptu; ?></td>
     </tr>
     <tr>
-        <td>Pangkat/Golongan</td><td>:</td><td><?php echo $pangkatgolongan; ?></td>
+        <td>Pangkat/Golongan</td><td>:</td><td><?php echo $pangkatdekan." / ".$golongandekan; ?></td>
     </tr>
     <tr>
         <td>Jabatan</td><td>:</td><td><?php echo $jabatan; ?></td>
     </tr>
     <tr>
-        <td colspan="3">Dengan ini menerangkan bahwa,</td>
+        <td colspan="3"><br>Dengan ini menerangkan bahwa,</td>
     </tr>
     <tr>
         <td width="20%">Nama</td><td>:</td><td><?php echo $namamahasiswa; ?></td>
@@ -70,7 +70,7 @@ Tel/Fax : 211065 Laman :  http//www.fahutan.unipa.ac.id</span></span></p></td>
         <td>Program Studi</td><td>:</td><td><?php echo $prodi; ?></td>
     </tr>
     <tr>
-        <td>Jurusan</td><td>:</td><td>KEHUTANAN</td>
+        <td>Jurusan</td><td>:</td><td>Kehutanan</td>
     </tr>
     <tr>
         <td colspan="3">

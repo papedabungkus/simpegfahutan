@@ -60,19 +60,31 @@ class Surat extends CI_Controller{
         }
     }
 
+    function get_autocomplete_jabatan(){
+        if (isset($_GET['term'])) {
+            $result = $this->Surat_model->search_jabatan($_GET['term']);
+            if (count($result) > 0) {
+            foreach ($result as $row)
+                $arr_result[] = $row->jabatan_struktural;
+                echo json_encode($arr_result);
+            }
+        }
+    }
+
     function cetaksurattugasbelajar() 
     {
         if(isset($_POST['btnCetak'])){
             $nipdosen = substr($_POST['txtDosen'],0,18);
+            $nipdekan = substr($_POST['namadekan'],0,18);
             $namadosen = $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipdosen")->row()->nama;
             $pendidikan = $_POST['pendidikan'];
             $prodikampus = $_POST['prodikampus'];
             $lamastudi = $_POST['lamastudi'];
-            $namadekan = $_POST['namadekan'];
-            $nipdekan = $_POST['nipdekan'];
+            $namadekan = $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipdekan")->row()->nama;
+            $nipdekan = $nipdekan;
         }
         $data = array(
-            'nomorsurat' => $_POST['nomorsurat'],
+            'nomorsurat' => $_POST['nomorsurat'], 
             'namadosen' => $namadosen,
             'nipdosen' => $nipdosen,
             'pendidikan' => $pendidikan,
@@ -93,12 +105,16 @@ class Surat extends CI_Controller{
         $prodi = $prodix['prodi'];
         $fakultasx = $this->Surat_model->get_mahasiswa($nimmahasiswa);
         $fakultas = $fakultasx['fakultas'];
+        $nipdekan = substr($_POST['namatu'],0,18);
+        $namadekan = $this->db->query("SELECT nama FROM dospeg WHERE nip=$nipdekan")->row()->nama;
+        $golongandekan = $this->db->query("SELECT golongan FROM dospeg WHERE nip=$nipdekan")->row()->golongan;
         if(isset($_POST['btnCetak'])){
             $data = array(
                 'nomorsurat' => $_POST['nomorsurat'],
-                'namatu' => $_POST['namatu'],
-                'niptu' => $_POST['niptu'],
-                'pangkatgolongan' => $_POST['pangkatgolongan'],
+                'namatu' => $namadekan,
+                'niptu' => $nipdekan,
+                'golongandekan' => $golongandekan,
+                'pangkatdekan' => $this->db->query("SELECT pangkat FROM pangkatgol WHERE golongan='$golongandekan'")->row()->pangkat,
                 'jabatan' => $_POST['jabatan'],
                 'namamahasiswa' => $namamahasiswa,
                 'nimmahasiswa' => $nimmahasiswa,

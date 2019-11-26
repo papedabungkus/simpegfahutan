@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="<?php echo base_url().'assets/autocomplete/css/jquery-ui.css'?>">
         <section class="page container">
             <div class="row">
                 <div class="span4">
@@ -13,6 +13,10 @@
                                     <option value="<?php echo $res['id'];?>" <?php if ($nip == $res['nip']) echo 'selected' ; ?>><?php echo $res['nama'];?></option>
                                 <?php } ?>
                                 </select>
+                            </div>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="icon-user"></i></span>
+                                <input name="namadospeg" id="txtDospeg" type="text" value="">
                             </div>
                             <div class="input-prepend">
                                 <br>
@@ -216,3 +220,11 @@
     </div>
   </div>
 </div>
+<script src="<?php echo base_url().'assets/autocomplete/js/jquery-ui.js'?>" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#txtDospeg").autocomplete({
+                source: "<?php echo site_url('surat/get_autocomplete_dospeg/?');?>"
+                });
+            });
+        </script>
