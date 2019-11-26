@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -8,7 +7,7 @@
     
     <meta name="layout" content="main"/>
     <link rel="icon" href="<?=base_url()?>/assets/favicon.ico" type="image/gif">
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 
     <script src="<?php echo base_url('assets/template/js/jquery/jquery-1.8.2.min.js');?>" type="text/javascript" ></script>
     <link href="<?php echo base_url('assets/template/css/customize-template.css');?>" type="text/css" media="screen, projection" rel="stylesheet" />
