@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="layout" content="main"/>
-    <link rel="icon" href="<?=base_url()?>/favicon.gif" type="image/gif">
+    <link rel="icon" href="<?=base_url()?>/assets/favicon.ico" type="image/gif">
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
     <script src="<?php echo base_url('assets/template/js/jquery/jquery-1.8.2.min.js');?>" type="text/javascript" ></script>
