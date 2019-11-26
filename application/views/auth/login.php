@@ -9,7 +9,7 @@
                     <div class="span8">
                         <div class="container-signin">
                             <legend>Please Login</legend>
-                            <form action="<?php echo base_url('auth/login'); ?>" method="POST" id="loginForm" class="form-signin" autocomplete="off">
+                            <form action="<?php echo base_url('auth/login'); ?>" method="POST" id="loginFormx" class="form-signin" autocomplete="off">
                                 <div class="form-inner">
                                     <div class="input-prepend">
                                         
