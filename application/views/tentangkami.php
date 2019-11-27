@@ -1,3 +1,4 @@
+
             <section class="page container">
                 <div class="row">
                     <div class="span8">
@@ -100,6 +101,7 @@
                                 </h5>
                             </div>
                             <div class="box-content">
+                            <div class="table-responsive">
                             <table class="table table-hover tablesorter">
                             <thead>
                                 <tr>
@@ -123,6 +125,7 @@
                                 <?php } ?>
                             </tbody>
                             </table>
+                                </div>
                             </div>
                         </div>
                     </div>

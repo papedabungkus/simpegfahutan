@@ -14,10 +14,7 @@
                                 <?php } ?>
                                 </select>
                             </div>
-                            <div class="input-prepend">
-                                <span class="add-on"><i class="icon-user"></i></span>
-                                <input name="namadospeg" id="txtDospeg" type="text" value="">
-                            </div>
+                            
                             <div class="input-prepend">
                                 <br>
                                 <button name="btnCari" type="submit" class="btn btn-success">
@@ -59,7 +56,7 @@
                         <div class="box-content box-table">
                         <table class="table table-hover tablesorter">
                             <thead>
-                                <tr>
+                                <tr> 
                                     <th>No.</th>
                                     <th>Nama Dokumen/Arsip</th>
                                     <th>Jenis File</th>

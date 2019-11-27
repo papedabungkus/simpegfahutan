@@ -48,6 +48,7 @@ a:link { color:#047a2c;}
                                 <legend class="lead">
                                 Pegawai Negeri Sipil Golongan <?=$res_gol_dosen['golongan'];?>
                                 </legend>
+                                <div class="table-responsive">
                                 <table class="table table-hover table-striped tablesorter">
                                     <thead>
                                         <tr>
@@ -77,6 +78,7 @@ a:link { color:#047a2c;}
                                 <?php } ?>
                             </tbody>
                             </table>
+                                </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -91,6 +93,7 @@ a:link { color:#047a2c;}
                                 <legend class="lead">
                                 Pegawai Negeri Sipil Golongan <?=$res_gol_pegawai['golongan'];?>
                                 </legend>
+                                <div class="table-responsive">
                                 <table class="table table-hover table-striped tablesorter">
                                     <thead>
                                         <tr>
@@ -120,6 +123,7 @@ a:link { color:#047a2c;}
                                 <?php } ?>
                             </tbody>
                             </table>
+                                </div>
                             <?php } ?>
                         </div>
                     </div>
